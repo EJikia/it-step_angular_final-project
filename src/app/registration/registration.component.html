@@ -1,0 +1,146 @@
+<div class="auth-page_container">
+  <div class="auth-page_left">
+    <img src="/assets/img/logo.png" />
+    <h1>Zazamtro</h1>
+  </div>
+  <div class="auth-page_right">
+       <div class="spinner" *ngIf='isLoading'>
+      <mat-spinner></mat-spinner>
+    </div>
+    <form [formGroup]="regForm" (ngSubmit)="onSubmit()" class="form" *ngIf='!isLoading'>
+      <h2>Sign Up</h2>
+      <span class="help-block" *ngIf="error">
+        {{error}}
+        </span>
+      <input
+        class="input-item"
+        type="text"
+        placeholder="Username"
+        formControlName="username"
+      />
+      <span
+        class="help-block"
+        *ngIf="regForm.get('username')?.errors?.['maxlength'] || regForm.get('username')?.errors?.['minlength'] && regForm.get('username')?.touched"
+        >*username must contain min. 1 and max. 24 characters</span
+      >
+      <span
+        class="help-block"
+        *ngIf="regForm.get('username')?.errors?.['required'] && regForm.get('username')?.touched"
+        >*username is required!</span
+      >
+      <span
+        class="help-block"
+        *ngIf="
+          regForm.get('username')?.hasError('usernameTaken') &&
+          regForm.get('username')?.touched
+        "
+      >
+        *this username already exist</span
+      >
+      <input
+        class="input-item"
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <span
+        class="help-block"
+        *ngIf="
+          regForm.get('email')?.hasError('emailUsed') &&
+          regForm.get('email')?.touched
+        "
+      >
+        *this email already registered</span
+      >
+      <span
+        class="help-block"
+        *ngIf="regForm.get('email')?.touched && regForm.get('email')?.errors?.['required'] "
+        >*email is required!</span
+      >
+      <span
+        class="help-block"
+        *ngIf="regForm.get('email')?.touched && regForm.get('email')?.errors?.['email'] "
+        >*email isn't valid</span
+      >
+      <input
+        class="input-item"
+        type="text"
+        placeholder="First Name"
+        formControlName="firstName"
+      />
+      <span
+        class="help-block"
+        *ngIf="regForm.get('firstName')?.errors?.['required'] && regForm.get('firstName')?.touched"
+        >*first name is required!</span
+      >
+      <span
+        class="help-block"
+        *ngIf="regForm.get('firstName')?.errors?.['maxlength'] && regForm.get('firstName')?.touched"
+        >*first name must contain min. 1 and max. 24 characters</span
+      >
+      <input
+        class="input-item"
+        type="text"
+        placeholder="Last Name"
+        formControlName="lastName"
+      />
+
+      <span
+        class="help-block"
+        *ngIf=" regForm.get('lastName')?.errors?.['maxlength'] && regForm.get('lastName')?.touched"
+        >last name must contain min. 1 and max. 24 characters</span
+      >
+      <span
+        class="help-block"
+        *ngIf="regForm.get('lastName')?.errors?.['required'] && regForm.get('lastName')?.touched"
+        >*last name is required!
+      </span>
+      <input
+        class="input-item"
+        type="password"
+        placeholder="password"
+        formControlName="password"
+      />
+      <span
+        class="help-block"
+        *ngIf="regForm.get('password')?.errors?.['maxlength'] || regForm.get('password')?.errors?.['minlength'] && regForm.get('password')?.touched"
+        >password must contain min. 8 and max. 64 characters</span
+      >
+      <span
+        class="help-block"
+        *ngIf="regForm.get('password')?.errors?.['required'] && regForm.get('password')?.touched"
+        >*password is required!
+      </span>
+      <input
+        class="input-item"
+        type="password"
+        placeholder="repeat password"
+        formControlName="rePassword"
+      />
+      <span
+        class="help-block"
+        *ngIf="regForm.get('rePassword')?.errors?.['required'] && regForm.get('rePassword')?.touched"
+        >*password confirmation is required!
+      </span>
+      <span
+        class="help-block"
+        *ngIf="
+          regForm.controls['password'].value !==
+            regForm.controls['rePassword'].value &&
+          regForm.get('rePassword')?.touched
+        "
+        >*passwords doesn't matches</span
+      >
+
+      <input type="checkbox" id="checkbox" formControlName="checkbox" />
+      <label class="checkbox" for="checkbox"
+        >I Agree to the Terms & Conditions</label
+      >
+      <button type="submit" [disabled]="!regForm.valid">Submit</button>
+      <p>
+        Already Registered?
+        <a routerLink="/login" > Sign In</a>
+      </p>
+    </form>
+  </div>
+</div>

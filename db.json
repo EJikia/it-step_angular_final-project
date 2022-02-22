@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "email": "e@a",
+      "password": "$2a$10$GlNyeJxO7/u2Aqg9MS9RIO9JqiepS3cC3Jcn6gF/nQHxQP4sz3Uj2",
+      "id": 1
+    },
+    {
+      "email": "eW@b",
+      "password": "$2a$10$D3S1DJT40i8t4OfUnd6UHO01xjcdWJAMAI8Lty3DNhLn3OH9WF5de",
+      "id": 2
+    },
+    {
+      "email": "e@f",
+      "password": "$2a$10$kMnh9Z9YUlMPyR1d4mY1eeAwFX101nppKda8Y5PXjRyBgo5Ufo3xG",
+      "username": "eka",
+      "firstName": "ekasj",
+      "lastName": "ekn",
+      "id": 3
+    },
+    {
+      "email": "e@b",
+      "password": "$2a$10$UZxYbXxdLEQFx1PVEn5Whes7kdYRWi4rJQz5T2mre9XdYF/aLvwa6",
+      "username": "ekaa",
+      "firstName": "eka",
+      "lastName": "jikia",
+      "id": 4
+    },
+    {
+      "email": "n@be",
+      "password": "$2a$10$gXur0lZfyc7wSPwzVsys3uxZc3Y/Dcs5Bdp8vukMzhzcQIMShFJdy",
+      "username": "aaaaa",
+      "firstName": "aaaaaaaa",
+      "lastName": "aaaaaaa",
+      "id": 5
+    },
+    {
+      "email": "l2@l",
+      "password": "$2a$10$zgGIm2Wq6qyCa95o19FMI.9fTlFfPCIQhOIR3Y3/4USc1Vrig9iJO",
+      "username": "ell",
+      "firstName": "l",
+      "lastName": "l",
+      "id": 6
+    },
+    {
+      "email": "n@m",
+      "password": "$2a$10$VINTFaiSxthFwrWy8D6kz.a34x6hGs0OWAcxgmehD5Vc3Pm1jhpd6",
+      "username": "gggggggggggg",
+      "firstName": "mmmm",
+      "lastName": "m",
+      "id": 7
+    }
+  ],
+  "posts": [],
+  "groups": [],
+  "comments": []
+}
