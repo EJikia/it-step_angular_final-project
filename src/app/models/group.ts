@@ -1,17 +1,17 @@
 
 export class Group {
   public creator: string;
-  public id: string;
   public title: string;
   public numOfMembers: number;
   public userId: string;
+  public id?: number;
 
-  constructor(creator: string, id: string, title: string, numOfMembers: number, userId: string) {
+  constructor(creator: string, title: string, numOfMembers: number, userId: string, id: number ) {
     this.creator = creator;
-    this.id = id;
     this.title = title;
     this.numOfMembers = numOfMembers;
     this.userId=userId;
+    this.id = id;
 
   }
 

@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './modules/material.module';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,6 +24,9 @@ import { CommentsComponent } from './comments/comments.component';
 import { GroupsComponent } from './groups/groups.component';
 import { GroupsListComponent } from './groups/groups-list/groups-list.component';
 import { GroupDialogBoxComponent } from './groups/groups-list/group-dialog-box/group-dialog-box.component';
+import { PageNotFoundComponent } from './shared/loading-spinner/loading-spinner/page-not-found.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { PostsService } from './services/posts.service';
 
 
 @NgModule({
@@ -43,7 +47,9 @@ import { GroupDialogBoxComponent } from './groups/groups-list/group-dialog-box/g
     CommentsComponent,
     GroupsComponent,
     GroupsListComponent,
-    GroupDialogBoxComponent
+    GroupDialogBoxComponent,
+    PageNotFoundComponent
+
 
   ],
   imports: [
@@ -53,10 +59,16 @@ import { GroupDialogBoxComponent } from './groups/groups-list/group-dialog-box/g
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-
-
+    
   ],
-  providers: [],
+  providers: [
+    PostsService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

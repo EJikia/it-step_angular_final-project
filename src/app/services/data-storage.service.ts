@@ -8,10 +8,10 @@ import { PostsService } from './posts.service';
   providedIn: 'root'
 })
 export class DataStorageService {
-baseURL = "http://localhost:3000/posts"
-  constructor(private http: HttpClient, private postsService: PostsService) {}
+  baseURL = "http://localhost:3000/posts"
+  constructor(private http: HttpClient, private postsService: PostsService) { }
 
-  storeRecipes() {
+  storePosts() {
     const posts = this.postsService.getPosts();
     this.http
       .put(
@@ -32,12 +32,12 @@ baseURL = "http://localhost:3000/posts"
         map(posts => {
           return posts.map(post => {
             return {
-              ...post,
-              comments: post.comments ? post.comments : []
+              ...post
             };
           });
         }),
         tap(posts => {
+          console.log(posts)
           this.postsService.setPosts(posts);
         })
       )

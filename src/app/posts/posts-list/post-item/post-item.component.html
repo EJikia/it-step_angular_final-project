@@ -12,13 +12,10 @@
         </mat-menu>
       </mat-card-header>
       <article>
-        <h3 class="post_author">Eka Jikia</h3>
-        <a routerLink="id" (click)="onSelected()"> <h1>ekaaa</h1></a>
+        <h3 class="post_author">{{post.author}}</h3>
+        <a routerLink="id" (click)="onSelected()"> <h1>{{post.title}}</h1></a>
         <div class="content_wrapper">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-          minima facere eaque quidem magnam in, necessitatibus ex quisquam
-          suscipit alias, praesentium odit. Aut vero qui iure! Sit officia
-          repudiandae tempore!
+          {{post.content}}
         </div>
       </article>
       <mat-card-actions>

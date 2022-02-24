@@ -4,6 +4,10 @@ import { User } from '../models/user';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject, Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt'
+
+
+
 
 
 export interface AuthResponseData {
@@ -22,7 +26,12 @@ export interface AuthResponseData {
 
 
 export class AuthService {
-  user = new BehaviorSubject<any>(null)
+  // user = new BehaviorSubject<any>(null)
+  user = new BehaviorSubject<any>(null);
+  username!: string;
+  userId!: number;
+  jwtHelper = new JwtHelperService();
+
   signUpURL = "http://localhost:3000/signup";
   signInURL = "http://localhost:3000/signin";
   constructor(private http: HttpClient, private router: Router) { }
@@ -63,21 +72,29 @@ export class AuthService {
           this.handleAuthentication(
             resData.user.email,
             resData.user.firstName,
-            resData.user.id,
             resData.user.lastName,
             resData.user.username,
-            resData.accessToken
+            resData.accessToken,
+            resData.user.id
+
           )
         })
       );
   }
 
-  // logout() {
-  //   this.user.next(null);
-  //   this.router.navigate(['/auth']);
-  //   localStorage.removeItem('userData');
+  loggedIn () {
+    const token =localStorage.getItem('token');
+    return !this.jwtHelper.isTokenExpired(token || undefined);
+  }
+  getDecodedToken() {
+    return this.jwtHelper.decodeToken(localStorage.getItem('token') || undefined);
+  }
+  logout() {
+    this.user.next(null);
+    this.router.navigate(['/login']);
+    localStorage.removeItem('user');
 
-  // }
+  }
   private handleError(errorRes: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
     if (!errorRes || !errorRes.error) {
@@ -99,16 +116,21 @@ export class AuthService {
   private handleAuthentication(
     email: string,
     firstName: string,
-    id: number,
     lastName: string,
     username: string,
-    accessToken: string
+    accessToken: string,
+    id: number
   ) {
 
-    const user = new User(email, firstName, id, lastName, username, accessToken);
+    const user = new User(email, firstName, lastName, username, accessToken, id);
     this.user.next(user);
+    this.userId = id;
+    this.username = username;
     console.log(user)
-    localStorage.setItem('userData', JSON.stringify(user))
+    localStorage.setItem('token', JSON.stringify(user.accessToken))
+    localStorage.setItem('id', JSON.stringify(user.id))
+
+
   }
 
 

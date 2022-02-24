@@ -9,6 +9,7 @@ import { Post } from '../../../models/post';
 })
 export class PostItemComponent implements OnInit {
   @Input() post!: Post;
+  @Input() index!: number;
   @Output() postSelected = new EventEmitter<void>();
   constructor(private router: Router) { }
 

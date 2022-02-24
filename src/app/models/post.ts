@@ -1,19 +1,19 @@
 import { Comment } from "./comment";
 export class Post {
-  public id: number;
-  public author: string;
-  public title: string;
-  public content: string;
-  public userId: number;
-  public comments?: Comment[];
-  public numberOfLikes: number;
-  public numberOfDislikes: number;
 
+  public author: string | null;
+  public title: string | null;
+  public content: string | null;
+  public userId: number | null;
+  public comments?: Comment[] | null;
+  public numberOfLikes: number | null;
+  public numberOfDislikes: number | null;
+  public id?: number | null;
 
-  constructor(id: number, author: string,
-    title: string, content: string, userId: number,comments: Comment[],
-    numberOfLikes: number, numberOfDislikes: number, ) {
-    this.id = id;
+  constructor( author: string | null,
+    title: string | null, content: string | null, userId: number | null,comments: Comment[] | null,
+    numberOfLikes: number | null, numberOfDislikes: number | null, id?: number | null ) {
+
     this.author = author;
     this.title = title;
     this.content = content;
@@ -21,7 +21,7 @@ export class Post {
     this.comments = comments;
     this.numberOfLikes = numberOfLikes;
     this.numberOfDislikes = numberOfDislikes;
-
+    this.id = id;
   }
 
 

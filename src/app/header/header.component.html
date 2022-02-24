@@ -1,4 +1,4 @@
-  <header >
+  <header *ngIf="isAuthenticated">
     <!-- *ngIf="isAuthenticated" -->
     <div class="top_bar">
       <a routerLink="/posts"
@@ -21,7 +21,7 @@
         <button mat-menu-item routerLink="/update-user-info">
           User Settings
         </button>
-        <button mat-menu-item routerLink="/login" (click)="logout()">
+        <button mat-menu-item  (click)="logout()">
           Log Out
         </button>
       </mat-menu>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../models/post';
 import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +11,7 @@ export class PostsService {
 
   private posts: Post[] = [];
 
-  constructor() {}
+  constructor( private authService: AuthService) {}
 
   setPosts(posts: Post[]) {
     this.posts = posts;
@@ -26,6 +27,8 @@ export class PostsService {
   }
 
   addPost(post: Post) {
+    post.userId=this.authService.userId
+    post.author=this.authService.username
     this.posts.push(post);
     this.postsChanged.next(this.posts.slice());
   }

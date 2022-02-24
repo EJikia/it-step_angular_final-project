@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Post } from 'src/app/models/post';
 import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
@@ -21,11 +22,15 @@ export class PostDialogBoxComponent implements OnInit {
   ngOnInit(): void {
   }
   addPost() {
-    // const title = this.postForm.value.title;
-    // const content = this.postForm.value.content;
-    // this.postsService.setPosts(title, content).subscribe(post => {
-    //   console.log("hi" + post)
-    //   this.router.navigate(["/posts"])
-    // })
+    const author = null;
+    const title = this.postForm.value.title;
+    const content = this.postForm.value.conten;
+    const userId = null;
+    const comments = null;
+    const numberOfLikes = null;
+    const numberOfDislikes = null;
+    const post = new Post(author, title, content, userId, comments, numberOfLikes, numberOfDislikes)
+
+    this.postsService.addPost(post);
   }
 }

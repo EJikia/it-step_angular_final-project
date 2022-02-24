@@ -6,7 +6,9 @@
       </button>
     </div>
     <hr />
-    <app-post-item
+    <app-post-item *ngFor="let postEl of posts; let i = index"
+    [post]="postEl"
+    [index]="i"
     ></app-post-item>
   </div>
 
@@ -15,6 +17,5 @@
   </div>
 </div>
 
-<!-- *ngFor="let postEl of posts"
-[post]="postEl"
+<!--
 (postSelected)="onPostSelected(postEl)" -->
