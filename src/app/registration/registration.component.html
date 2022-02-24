@@ -5,7 +5,7 @@
   </div>
   <div class="auth-page_right">
        <div class="spinner" *ngIf='isLoading'>
-      <mat-spinner></mat-spinner>
+      <!-- <mat-spinner></mat-spinner> -->
     </div>
     <form [formGroup]="regForm" (ngSubmit)="onSubmit()" class="form" *ngIf='!isLoading'>
       <h2>Sign Up</h2>
@@ -21,7 +21,7 @@
       <span
         class="help-block"
         *ngIf="regForm.get('username')?.errors?.['maxlength'] || regForm.get('username')?.errors?.['minlength'] && regForm.get('username')?.touched"
-        >*username must contain min. 1 and max. 24 characters</span
+        >*username must contain min. 3 and max. 24 characters</span
       >
       <span
         class="help-block"

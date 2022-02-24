@@ -5,20 +5,17 @@ import { Group } from "./group";
 export class User {
   constructor(
     public email: string,
-    public password: string,
+    public firstName: string,
     public id: number,
-    public username?: string,
-    public firstName?: string,
-    public lastName?: string,
-
-    private _token?: string,
-    private _tokenExpirationDate?: Date
-  ) { }
+    public lastName: string,
+    public username: string,
+    private accessToken: string
+  ) {}
 
   get token() {
-    if (!this._tokenExpirationDate || new Date() > this._tokenExpirationDate) {
+    if (!this.accessToken) {
       return null;
     }
-    return this._token;
+    return this.accessToken;
   }
 }

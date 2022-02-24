@@ -1,0 +1,40 @@
+.card_wrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+mat-card {
+  margin:2em 1em;
+  width: 100%;
+}
+
+mat-card-actions {
+margin: 2em;
+float: right;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between
+}
+.content_wrapper{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.post_btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.post_btn:hover {
+  background-color:mediumseagreen;
+  border-radius: 5px;
+}
+
+.edit_icon {
+  width: 20px;
+  height: 20px;
+}

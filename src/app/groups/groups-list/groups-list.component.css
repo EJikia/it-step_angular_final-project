@@ -1,0 +1,15 @@
+button{
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid black;
+  margin-bottom: 3em;
+  margin-right: 1em;
+}
+ button:hover{
+  background-color: mediumseagreen;
+
+}
+.groups-list{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { CustomValidationsService } from '../auth/custom-validations.service';
 import { ConfirmPasswordValidator } from '../auth/passwords.validator';
@@ -16,7 +17,7 @@ export class RegistrationComponent implements OnInit {
   error: string = "";
   regForm = new FormGroup({});
 
-  constructor(private authService: AuthService, private customValidatorsService: CustomValidationsService, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private authService: AuthService, private customValidatorsService: CustomValidationsService, private formBuilder: FormBuilder) {
     this.regForm = formBuilder.group({
       username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(24)], this.customValidatorsService.validateUsernameNotTaken.bind(this.customValidatorsService)),
       email: new FormControl('', [Validators.required, Validators.email], this.customValidatorsService.validateEmailNotUsed.bind(this.customValidatorsService)),
@@ -44,8 +45,10 @@ export class RegistrationComponent implements OnInit {
     this.isLoading = true;
 
     this.authService.signUp(username, email, firstName, lastName, password).subscribe(resData => {
+      alert("User registered successfully!"),
       console.log(resData);
       this.isLoading = false;
+      this.router.navigate(["/login"])
     },
       errorMessage => {
         this.error = errorMessage;

@@ -10,6 +10,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class LoginComponent implements OnInit {
   isLoading = false;
+  error: string = "";
   loginForm = new FormGroup({});
   constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
     this.loginForm = formBuilder.group({
@@ -23,17 +24,21 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
 
-
-    if (!this.loginForm.valid) {
-      return
-    } else {
-      const email = this.loginForm.value.email;
-      const password = this.loginForm.value.password;
-      this.isLoading = true;
-      this.authService.signIn(email, password)
-    }
+    this.isLoading = true;
+    this.authService.signIn(email, password).subscribe(resData => {
+      console.log("hi"+resData)
+      this.isLoading = false;
+      this.router.navigate(["/posts"])
+    },
+      errorMessage => {
+        this.error = errorMessage;
+        this.isLoading = false;
+      });
     this.loginForm.reset()
+
   }
 
 }

@@ -1,0 +1,51 @@
+<div id="userInfo_container">
+  <form id="user_info">
+    <div>
+      <label class="userInfo-form-item userInfo-label" for="firstname"
+        >First Name</label
+      >
+      <input
+        class="userInfo-form-item userInfo-input"
+        id="userInfo_firstname"
+        type="text"
+        name="firstname"
+        [value]="firstName"
+      />
+
+      <label class="userInfo-form-item userInfo-label" for="lastname"
+        >Last Name</label
+      >
+      <input
+        class="userInfo-form-item userInfo-input"
+        id="userInfo_lastname"
+        type="text"
+        name="lastname"
+        [value]="lastName"
+      />
+
+      <label class="userInfo-form-item userInfo-label" for="username"
+        >Username</label
+      >
+      <input
+        class="userInfo-form-item userInfo-input"
+        id="userInfo_username"
+        type="text"
+        name="username"
+        [value]="username"
+      />
+
+      <label class="userInfo-form-item userInfo-label" for="email">Email</label>
+      <input
+        class="userInfo-form-item userInfo-input"
+        id="userInfo_email"
+        type="email"
+        name="email"
+        [value]="email"
+      />
+    </div>
+    <div class="userInfo-update-btn">
+      <button id="resetUserInfo" type="button">Reset</button>
+      <button id="saveUpdatedUserInfo" type="button">Save</button>
+    </div>
+  </form>
+</div>

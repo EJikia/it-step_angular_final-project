@@ -1,0 +1,31 @@
+.main_container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+.side_nav{
+display: flex;
+justify-content: center;
+  margin-top: 15em;
+}
+.post_wrapper{
+  width: 70%;
+}
+.postbtn_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start_post {
+  padding: 1em 10em;
+  margin: 1em;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 9px 7px 5px -3px rgba(209, 201, 201, 0.57);
+  cursor: pointer;
+  text-align: center;
+
+}

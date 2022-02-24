@@ -1,0 +1,31 @@
+  <header >
+    <!-- *ngIf="isAuthenticated" -->
+    <div class="top_bar">
+      <a routerLink="/posts"
+        ><img class="logo" src="/assets/img/logo.png" alt="logo"
+      /></a>
+      <app-filter *ngIf="router.url === '/posts'"></app-filter>
+
+    </div>
+    <div class="navbar">
+      <nav>
+        <li>
+          <a routerLink="/posts">Posts</a>
+        </li>
+        <li>
+          <a routerLink="/groups">Groups</a>
+        </li>
+        <li>
+        <a [matMenuTriggerFor]="menu">Settings</a>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/update-user-info">
+          User Settings
+        </button>
+        <button mat-menu-item routerLink="/login" (click)="logout()">
+          Log Out
+        </button>
+      </mat-menu>
+    </li>
+      </nav>
+    </div>
+  </header>

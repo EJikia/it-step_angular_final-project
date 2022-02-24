@@ -1,0 +1,39 @@
+<div class="card_wrapper">
+  <mat-card>
+    <div class="post_section">
+      <mat-card-header>
+        <p>10/05/2022</p>
+        <button mat-button [matMenuTriggerFor]="edit">
+          <img src="/assets/img/edit.png" alt="edit" class="edit_icon" />
+        </button>
+        <mat-menu #edit="matMenu">
+          <button mat-menu-item (click)="onSelected()">Edit</button>
+          <button mat-menu-item (click)="onSelected()">Delete</button>
+        </mat-menu>
+      </mat-card-header>
+      <article>
+        <h3 class="post_author">Eka Jikia</h3>
+        <a routerLink="id" (click)="onSelected()"> <h1>ekaaa</h1></a>
+        <div class="content_wrapper">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+          minima facere eaque quidem magnam in, necessitatibus ex quisquam
+          suscipit alias, praesentium odit. Aut vero qui iure! Sit officia
+          repudiandae tempore!
+        </div>
+      </article>
+      <mat-card-actions>
+        <button class="post_btn">
+          <img src="/assets/img/like.png" alt="" />
+        </button>
+        <span></span>
+        <button class="post_btn">
+          <img src="/assets/img/dislike.png" alt="" />
+        </button>
+        <p>Comments: 10</p>
+      </mat-card-actions>
+    </div>
+    <div class="comments_section">
+      <app-post-detail *ngIf="postSelected"></app-post-detail>
+    </div>
+  </mat-card>
+</div>
