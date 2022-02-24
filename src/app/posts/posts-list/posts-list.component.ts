@@ -6,6 +6,7 @@ import { DataStorageService } from 'src/app/services/data-storage.service';
 import { Post } from 'src/app/models/post';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 @Component({
@@ -18,10 +19,10 @@ export class PostsListComponent implements OnInit {
   posts!: Post[];
   subscription!: Subscription;
   constructor(public dialog: MatDialog, private postsService: PostsService, private router: Router,
-    private route: ActivatedRoute, private dataStorageService: DataStorageService) { }
+    private route: ActivatedRoute, private dataStorageService: DataStorageService, private authservice: AuthService) { }
 
   ngOnInit(): void {
-    this.dataStorageService.fetchPosts().subscribe(res =>{
+      this.dataStorageService.fetchPosts().subscribe(res =>{
       return
    });
     this.subscription = this.postsService.postsChanged
