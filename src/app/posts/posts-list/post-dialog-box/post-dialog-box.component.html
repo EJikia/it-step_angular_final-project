@@ -1,6 +1,6 @@
 
 <h1 mat-dialog-title>Create Post</h1>
-<form class="example-form" [formGroup]="postForm" (ngSubmit)="addPost()" >
+<form class="example-form" [formGroup]="postForm" (ngSubmit)="onAddPost()" >
   <mat-form-field appearance="fill">
     <mat-label>Title</mat-label>
     <input matInput placeholder="insert post title..." value="" formControlName="title">

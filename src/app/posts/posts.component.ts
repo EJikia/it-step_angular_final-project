@@ -14,18 +14,9 @@ export class PostsComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService, private postsService: PostsService) { }
 
   ngOnInit(): void {
-    // this.dataStorageService.fetchPosts()
-    this.loadPosts()
 
   }
 
 
-  loadPosts() {
-    this.postsService.getPosts().subscribe(resData => {
-      this.posts = resData
-      this.posts.reverse();
-      console.log(this.posts)
-    })
-  }
 
 }

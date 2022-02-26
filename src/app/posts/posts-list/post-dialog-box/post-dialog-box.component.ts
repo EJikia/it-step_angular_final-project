@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit,Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Post } from 'src/app/models/post';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 import { PostsService } from 'src/app/services/posts.service';
+
 
 @Component({
   selector: 'app-post-dialog-box',
@@ -12,6 +14,8 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./post-dialog-box.component.css']
 })
 export class PostDialogBoxComponent implements OnInit {
+
+  //@Output() saveEventEmitter = new EventEmitter();
 
   postForm = new FormGroup({});
 
@@ -21,6 +25,8 @@ export class PostDialogBoxComponent implements OnInit {
     private dataStorageService: DataStorageService,
     private formBuilder: FormBuilder,
     private router: Router,
+    private dialogRef: MatDialogRef<any>
+
 
   ) {
 
@@ -32,25 +38,32 @@ export class PostDialogBoxComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  addPost() {
-if (!this.postForm.valid){
-  return
-}
-    const title = this.postForm.value.title;
-    const content = this.postForm.value.content;
-    const post = new Post (title, content);
-    this.postsService.addPost(post);
-    this.router.navigate(["posts"]).then(() => {
-      window.location.reload();
-    });
+  onAddPost() {
+    console.log('forma');
+    if (!this.postForm.valid) {
+      console.log("shemovida invalid")
+      return
 
+    } else {
+      const title = this.postForm.value.title;
+      const content = this.postForm.value.content;
+      const post = new Post(title, content);
+      console.log(post)
+      console.log("shemovida" + title)
+      this.postsService.addPost(post);
+      this.dialogRef.close();
+      // this.router.navigate(["posts"]).then(() => {
+      //   window.location.reload();
+      // });
+    }
     // const author = this.authService.username;
     // const post = new Post(title, content, author)
     // this.postsService.addPost(post);
     // this.dataStorageService.storePosts()
   }
 
-  closeDialog(){
-    this.router.navigate(["posts"])
+  closeDialog() {
+      this.dialogRef.close(true);
+
   }
 }

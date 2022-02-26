@@ -22,6 +22,7 @@ export class PostsListComponent implements OnInit {
     private route: ActivatedRoute, private dataStorageService: DataStorageService, private authservice: AuthService) { }
 
   ngOnInit(): void {
+    this.loadPosts()
     // this.subscription = this.postsService.postsChanged
       // .subscribe(
       //   (posts: Post[]) => {
@@ -30,20 +31,32 @@ export class PostsListComponent implements OnInit {
       //   }
       // );
     // this.posts = this.postsService.getPosts();
-    console.log(this.posts)
+
   }
 
+  loadPosts() {
+    this.postsService.getPosts().subscribe(resData => {
+      this.posts = resData
+      this.posts.reverse();
+    })
+  }
   openDialog() {
-    this.dialog.open(PostDialogBoxComponent, { width: '50%', disableClose: true });
+
+    const dialogRef = this.dialog.open(PostDialogBoxComponent, { width: '50%', disableClose: true });
+
+    dialogRef.afterClosed().subscribe(
+        () =>
+        this.loadPosts()
+    );
   }
 
   onPostSelected(post: Post) {
     this.postWasSelected.emit(post);
   }
 
-  onNewPosts() {
-    this.router.navigate(['new'], {relativeTo: this.route});
-  }
+  // onNewPosts() {
+  //   this.router.navigate(['new'], {relativeTo: this.route});
+  // }
 
 }
 function input() {

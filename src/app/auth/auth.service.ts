@@ -6,10 +6,6 @@ import { throwError, BehaviorSubject, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt'
 
-
-
-
-
 export interface AuthResponseData {
   accessToken: string,
   user: {
@@ -36,15 +32,9 @@ export class AuthService {
   signInURL = "http://localhost:3000/signin";
   constructor(private http: HttpClient, private router: Router) { }
 
-  // getUsers() {
 
-  //   this.http.get(this.signUpURL).subscribe(respData => {
-  //     const usersData = respData;
-  //   })
-  // }
 
   signUp(username: string, email: string, firstName: string, lastName: string, password: string) {
-    console.log("Shemovida")
     return this.http
       .post<AuthResponseData>(
         this.signUpURL,
@@ -126,7 +116,7 @@ export class AuthService {
     this.user.next(user);
     this.userId = id;
     this.username = username;
-    console.log(user)
+    console.log(id,username);
     localStorage.setItem('token', JSON.stringify(user.accessToken))
     localStorage.setItem('id', JSON.stringify(user.id))
 

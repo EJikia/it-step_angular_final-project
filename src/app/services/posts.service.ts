@@ -25,9 +25,9 @@ export class PostsService {
      post.numberOfLikes=0;
      post.numberOfDislikes=0;
      post.date= new Date()
-    return this.http.post(this.baseURL,post).subscribe(resData => {
-    console.log(resData)
-    })
+     console.log(post);
+    return this.http.post(this.baseURL,post).subscribe();
+
    }
   // setPosts(posts: Post[]) {
   //   this.posts = posts;

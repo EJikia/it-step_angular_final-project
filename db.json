@@ -20,154 +20,36 @@
   "posts": [
     {
       "author": "ekaterine",
-      "title": "nnn",
-      "content": "nnnn",
-      "userId": 20,
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 1
-    },
-    {
-      "author": "test",
-      "title": "bbbb",
-      "content": "bbbbbb",
-      "userId": 2,
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 2
-    },
-    {
-      "title": "bbbbbb",
-      "content": "bbbbbbbbbbbbbbb",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 3
-    },
-    {
-      "title": "",
-      "content": "",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 4
-    },
-    {
-      "title": "nnnn",
-      "content": "ddddddddd",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 5
-    },
-    {
-      "author": "ekaterine",
-      "title": "eka",
-      "content": "ela",
+      "title": "viyaviVIYAVI",
+      "content": "vdjkg",
       "userId": 1,
       "comments": [],
       "numberOfLikes": 0,
       "numberOfDislikes": 0,
-      "id": 6
-    },
-    {
-      "title": "gggg",
-      "content": "cccc",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 7
+      "date": "2022-02-26T15:54:45.422Z",
+      "id": 45
     },
     {
       "author": "ekaterine",
-      "title": "poiu",
-      "content": "iopp",
+      "title": "adekvaturiposti",
+      "content": "adekvaturia?",
       "userId": 1,
       "comments": [],
       "numberOfLikes": 0,
       "numberOfDislikes": 0,
-      "id": 8
-    },
-    {
-      "title": "",
-      "content": "",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 9
-    },
-    {
-      "title": "mmmmmmm",
-      "content": "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 10
-    },
-    {
-      "title": "BBBBBBBB",
-      "content": "GGEESSAA",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 11
-    },
-    {
-      "title": "kii",
-      "content": "nnn",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "id": 12
-    },
-    {
-      "title": "helo",
-      "content": "halo",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-25T18:35:40.396Z",
-      "id": 13
+      "date": "2022-02-26T15:56:29.169Z",
+      "id": 46
     },
     {
       "author": "ekaterine",
-      "title": "satauri",
-      "content": "posti",
+      "title": "gbg",
+      "content": "nfskdgs",
       "userId": 1,
       "comments": [],
       "numberOfLikes": 0,
       "numberOfDislikes": 0,
-      "date": "2022-02-25T20:41:46.756Z",
-      "id": 14
-    },
-    {
-      "title": "post",
-      "content": "postaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-26T11:05:28.763Z",
-      "id": 15
-    },
-    {
-      "title": "LLL",
-      "content": "LLLLLLLLLLllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-26T11:42:02.963Z",
-      "id": 16
-    },
-    {
-      "title": "nnnnnnnnnn",
-      "content": "postaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-26T11:42:16.823Z",
-      "id": 17
+      "date": "2022-02-26T15:58:28.270Z",
+      "id": 47
     }
   ],
   "groups": [],
