@@ -2,6 +2,9 @@ import { registerLocaleData } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { GroupDetailComponent } from './groups/group-detail/group-detail.component';
+import { GroupDialogBoxComponent } from './groups/groups-list/group-dialog-box/group-dialog-box.component';
+import { GroupsComponent } from './groups/groups.component';
 import { LoginComponent } from './login/login.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { PostEditComponent } from './posts/post-edit/post-edit.component';
@@ -16,23 +19,14 @@ const routes: Routes = [
   { path: '', redirectTo: '/posts', pathMatch: "full" },
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'groups', component: GroupsComponent },
+  { path: 'groups/:id', component: GroupDetailComponent},
   { path: 'update-user-info', component: SettingsPageComponent, canActivate: [AuthGuard] },
-  {
-    path: 'posts', component: PostsComponent, canActivate: [AuthGuard],
-    children: [
-      { path: 'new', component: PostDialogBoxComponent },
-      {
-        path: ':id',
-        component: PostDetailComponent,
-        resolve: [PostsResolverService]
-      },
-      {
-        path: ':id/edit',
-        component: PostDialogBoxComponent,
-        resolve: [PostsResolverService]
-      }
-    ]
-  },
+  { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
+  { path: 'posts/new', component: PostDialogBoxComponent },
+  { path: 'posts/:id', component: PostDetailComponent, resolve: [PostsResolverService] },
+  { path: 'posts/:id/edit',  component: PostDialogBoxComponent,resolve: [PostsResolverService]},
+  { path: 'posts/createGroup', component:GroupDialogBoxComponent },
   { path: '**', component: PageNotFoundComponent },
 
 ];

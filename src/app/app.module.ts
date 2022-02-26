@@ -18,7 +18,7 @@ import { PostItemComponent } from './posts/posts-list/post-item/post-item.compon
 import { RegistrationComponent } from './registration/registration.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner/loading-spinner.component';
-import { FilterComponent } from './shared/loading-spinner/loading-spinner/filter/filter.component';
+import { FilterComponent } from './shared/filter/filter.component';
 import { PostEditComponent } from './posts/post-edit/post-edit.component';
 import { CommentsComponent } from './comments/comments.component';
 import { GroupsComponent } from './groups/groups.component';
@@ -27,6 +27,8 @@ import { GroupDialogBoxComponent } from './groups/groups-list/group-dialog-box/g
 import { PageNotFoundComponent } from './shared/loading-spinner/loading-spinner/page-not-found.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { PostsService } from './services/posts.service';
+import { SortComponent } from './shared/sort/sort.component';
+import { GroupDetailComponent } from './groups/group-detail/group-detail.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { PostsService } from './services/posts.service';
     GroupsComponent,
     GroupsListComponent,
     GroupDialogBoxComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SortComponent,
+    GroupDetailComponent
 
 
   ],
@@ -59,7 +63,7 @@ import { PostsService } from './services/posts.service';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    
+
   ],
   providers: [
     PostsService,

@@ -1,36 +1,35 @@
-<div class="card_wrapper">
-  <mat-card>
-    <div class="post_section">
-      <mat-card-header>
-        <p>10/05/2022</p>
-        <button mat-button [matMenuTriggerFor]="edit">
-          <img src="/assets/img/edit.png" alt="edit" class="edit_icon" />
-        </button>
-        <mat-menu #edit="matMenu">
-          <button mat-menu-item (click)="onSelected()">Edit</button>
-          <button mat-menu-item (click)="onSelected()">Delete</button>
-        </mat-menu>
-      </mat-card-header>
-      <article>
-        <h3 class="post_author">{{post.author}}</h3>
-        <a routerLink="id" (click)="onSelected()"> <h1>{{post.title}}</h1></a>
-        <div class="content_wrapper">
-          {{post.content}}
-        </div>
-      </article>
-      <mat-card-actions>
-        <button class="post_btn">
-          <img src="/assets/img/like.png" alt="" />
-        </button>
-        <span></span>
-        <button class="post_btn">
-          <img src="/assets/img/dislike.png" alt="" />
-        </button>
-        <p>Comments: 10</p>
-      </mat-card-actions>
-    </div>
-    <div class="comments_section">
-      <app-post-detail *ngIf="postSelected"></app-post-detail>
-    </div>
-  </mat-card>
-</div>
+<mat-card class="post-wrapper">
+  <mat-card-actions align="end" class="edit_btn">
+    <button mat-button [matMenuTriggerFor]="edit" class="edit">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-card-actions>
+  <mat-menu #edit="matMenu">
+    <button mat-menu-item (click)="onSelected()">Edit</button>
+    <button mat-menu-item (click)="onSelected()">Delete</button>
+  </mat-menu>
+  <mat-card-title
+    ><a routerLink="/posts/:id" (click)="onSelected()">{{
+      post.title
+    }}</a></mat-card-title
+  >
+  <mat-card-subtitle>
+    <h2>{{ post.author }}</h2>
+  </mat-card-subtitle>
+  <mat-card-content>
+    {{ post.content }}
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+      <p>comments:</p>
+
+      <button mat-button>Like 5</button>
+      <button mat-button>Dislike  5</button>
+
+  </mat-card-actions>
+  <div class="date">
+    <p>{{ "10.02.2022 17:36" }}</p>
+  </div>
+  <!-- <app-post-detail *ngIf="postSelected"></app-post-detail> -->
+</mat-card>
+<br />

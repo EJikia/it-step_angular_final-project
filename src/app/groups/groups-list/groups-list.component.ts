@@ -7,14 +7,14 @@ import { GroupDialogBoxComponent } from '../groups-list/group-dialog-box/group-d
   styleUrls: ['./groups-list.component.css']
 })
 export class GroupsListComponent implements OnInit {
-
+  links = ['title1', 'title2'];
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   openDialog() {
-    this.dialog.open(GroupDialogBoxComponent, { width: '50%' });
+    this.dialog.open(GroupDialogBoxComponent, { width: '50%',  disableClose: true });
   }
 
 }

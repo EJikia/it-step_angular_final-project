@@ -1,8 +1,10 @@
-<div class="post-page_wrapper">
-  <div>
-    <app-posts-list></app-posts-list>
-  </div>
-  <div>
-    <router-outlet></router-outlet>
-  </div>
-</div>
+
+<app-filter></app-filter>
+<main>
+  <app-groups-list class="groups"></app-groups-list>
+  <app-posts-list class="posts" [postsList]="posts"></app-posts-list>
+
+
+
+<router-outlet></router-outlet>
+</main>

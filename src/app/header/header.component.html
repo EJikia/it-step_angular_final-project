@@ -1,31 +1,25 @@
-  <header *ngIf="isAuthenticated">
-    <!-- *ngIf="isAuthenticated" -->
-    <div class="top_bar">
+<header class="top-nav" >
+  <!-- *ngIf="isAuthenticated" -->
       <a routerLink="/posts"
-        ><img class="logo" src="/assets/img/logo.png" alt="logo"
-      /></a>
-      <app-filter *ngIf="router.url === '/posts'"></app-filter>
+      ><img class="logo" src="/assets/img/logo.png" alt="logo"
+    /></a>
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>settings</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/update-user-info">
+        User Settings
+      </button>
+      <button mat-menu-item (click)="logout()">Log Out</button>
+    </mat-menu>
+</header>
 
-    </div>
-    <div class="navbar">
-      <nav>
-        <li>
-          <a routerLink="/posts">Posts</a>
-        </li>
-        <li>
-          <a routerLink="/groups">Groups</a>
-        </li>
-        <li>
-        <a [matMenuTriggerFor]="menu">Settings</a>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/update-user-info">
-          User Settings
-        </button>
-        <button mat-menu-item  (click)="logout()">
-          Log Out
-        </button>
-      </mat-menu>
-    </li>
-      </nav>
-    </div>
-  </header>
+  <div class="navbar">
+    <nav mat-tab-nav-bar >
+
+      <a routerLink={{link}} mat-tab-link *ngFor="let link of links"
+      (click)="activeLink = link"
+      [active]="activeLink == link"> {{link}} </a>
+
+    </nav>
+  </div>
+

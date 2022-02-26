@@ -18,12 +18,12 @@ export class PostsResolverService {
   ) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const posts = this.postsService.getPosts();
+    // const posts = this.postsService.getPosts();
 
-    if (posts.length === 0) {
-      return this.dataStorageService.fetchPosts();
-    } else {
-      return posts;
-    }
+    // if (posts.length === 0) {
+    //   return this.dataStorageService.fetchPosts();
+    // } else {
+    //   return posts;
+    // }
   }
 }

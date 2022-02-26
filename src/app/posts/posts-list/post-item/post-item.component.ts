@@ -18,6 +18,6 @@ export class PostItemComponent implements OnInit {
 
   onSelected() {
     this.postSelected.emit();
-    this.router.navigate(["id"])
+    this.router.navigate(["posts/id"])
   }
 }

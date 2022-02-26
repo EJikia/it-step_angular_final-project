@@ -1,31 +1,44 @@
+<div class="container">
+<mat-card class="post-wrapper">
+  <mat-card-actions align="end" class="edit_btn">
+    <button mat-button [matMenuTriggerFor]="edit" class="edit">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-card-actions>
+  <mat-menu #edit="matMenu">
+    <button mat-menu-item>Edit</button>
+    <button mat-menu-item>Delete</button>
+  </mat-menu>
+  <mat-card-title><a routerLink="/posts/:id"></a>title</mat-card-title>
+  <mat-card-subtitle>
+    <h2>lala</h2>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <p>lands</p>
+  </mat-card-content>
+</mat-card>
 <div class="comments">
   <form class="comment_form">
-    <input
-      class="comment_input"
-      type="text"
-      placeholder="Leave a comment..."
-    />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <textarea
+        matInput
+        class="comment_input"
+        placeholder="Leave a comment..."
+      ></textarea>
+    </mat-form-field>
   </form>
+
   <div class="comment">
     <h3 class="comment_author">Eka Jikia</h3>
-    <p class="comment_content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-      qui minima quia enim delectus
-    </p>
+    <p class="comment_content"></p>
   </div>
   <div class="comment">
     <h3 class="comment_author">Eka Jikia</h3>
-    <p class="comment_content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-      qui minima quia enim delectus
-    </p>
+    <p class="comment_content"></p>
   </div>
   <div class="comment">
     <h3 class="comment_author">Eka Jikia</h3>
-    <p class="comment_content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-      qui minima quia enim delectus
-    </p>
+    <p class="comment_content"></p>
   </div>
 </div>
-
+</div>

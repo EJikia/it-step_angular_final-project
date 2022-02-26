@@ -11,7 +11,7 @@
     <textarea matInput placeholder="type here..." formControlName="content"></textarea>
   </mat-form-field>
   <div mat-dialog-actions align="end">
-    <button type="submit" mat-button matDialogClose="yes">Post</button>
-    <button mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" mat-button matDialogClose="yes" [disabled]="!postForm.valid">Post</button>
+    <button mat-button mat-dialog-close (click)="closeDialog()">Cancel</button>
   </div>
 </form>

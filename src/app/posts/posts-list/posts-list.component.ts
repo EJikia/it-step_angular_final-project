@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PostDialogBoxComponent } from './post-dialog-box/post-dialog-box.component';
 import { PostsService } from '../../services/posts.service';
@@ -16,28 +16,25 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class PostsListComponent implements OnInit {
   @Output() postWasSelected = new EventEmitter<Post>();
-  posts!: Post[];
+  @Input("postsList") posts!: Post[]
   subscription!: Subscription;
   constructor(public dialog: MatDialog, private postsService: PostsService, private router: Router,
     private route: ActivatedRoute, private dataStorageService: DataStorageService, private authservice: AuthService) { }
 
   ngOnInit(): void {
-      this.dataStorageService.fetchPosts().subscribe(res =>{
-      return
-   });
-    this.subscription = this.postsService.postsChanged
-      .subscribe(
-        (posts: Post[]) => {
-          this.posts = posts;
-          console.log(this.posts)
-        }
-      );
-    this.posts = this.postsService.getPosts();
+    // this.subscription = this.postsService.postsChanged
+      // .subscribe(
+      //   (posts: Post[]) => {
+      //     this.posts = posts;
+      //     console.log(this.posts)
+      //   }
+      // );
+    // this.posts = this.postsService.getPosts();
     console.log(this.posts)
   }
 
   openDialog() {
-    this.dialog.open(PostDialogBoxComponent, { width: '50%' });
+    this.dialog.open(PostDialogBoxComponent, { width: '50%', disableClose: true });
   }
 
   onPostSelected(post: Post) {
@@ -49,3 +46,7 @@ export class PostsListComponent implements OnInit {
   }
 
 }
+function input() {
+  throw new Error('Function not implemented.');
+}
+

@@ -1,184 +1,174 @@
 {
   "users": [
     {
-      "email": "e@a",
-      "password": "$2a$10$GlNyeJxO7/u2Aqg9MS9RIO9JqiepS3cC3Jcn6gF/nQHxQP4sz3Uj2",
+      "email": "e@e",
+      "password": "$2a$10$RPw4vEwgURojeiNm/clDM.Fke1Ag8wo/qiCRago0T7TgU9Tp102bK",
+      "username": "ekaterine",
+      "firstName": "e",
+      "lastName": "e",
       "id": 1
     },
     {
-      "email": "eW@b",
-      "password": "$2a$10$D3S1DJT40i8t4OfUnd6UHO01xjcdWJAMAI8Lty3DNhLn3OH9WF5de",
+      "email": "test@test",
+      "password": "$2a$10$CxVYooMGKyL.sfIgGJgCHupvKZ9tMKheH6TEZ25QcY6esV1HErKxq",
+      "username": "test",
+      "firstName": "test",
+      "lastName": "test",
       "id": 2
-    },
-    {
-      "email": "e@f",
-      "password": "$2a$10$kMnh9Z9YUlMPyR1d4mY1eeAwFX101nppKda8Y5PXjRyBgo5Ufo3xG",
-      "username": "eka",
-      "firstName": "ekasj",
-      "lastName": "ekn",
-      "id": 3
-    },
-    {
-      "email": "e@b",
-      "password": "$2a$10$UZxYbXxdLEQFx1PVEn5Whes7kdYRWi4rJQz5T2mre9XdYF/aLvwa6",
-      "username": "ekaa",
-      "firstName": "eka",
-      "lastName": "jikia",
-      "id": 4
-    },
-    {
-      "email": "n@be",
-      "password": "$2a$10$gXur0lZfyc7wSPwzVsys3uxZc3Y/Dcs5Bdp8vukMzhzcQIMShFJdy",
-      "username": "aaaaa",
-      "firstName": "aaaaaaaa",
-      "lastName": "aaaaaaa",
-      "id": 5
-    },
-    {
-      "email": "l2@l",
-      "password": "$2a$10$zgGIm2Wq6qyCa95o19FMI.9fTlFfPCIQhOIR3Y3/4USc1Vrig9iJO",
-      "username": "ell",
-      "firstName": "l",
-      "lastName": "l",
-      "id": 6
-    },
-    {
-      "email": "n@m",
-      "password": "$2a$10$VINTFaiSxthFwrWy8D6kz.a34x6hGs0OWAcxgmehD5Vc3Pm1jhpd6",
-      "username": "gggggggggggg",
-      "firstName": "mmmm",
-      "lastName": "m",
-      "id": 7
-    },
-    {
-      "email": "kk@k",
-      "password": "$2a$10$33B9g/NoEun6yV0sA4Es2Os.RTXtkGMxjMFPKS/HS54AalplNjune",
-      "username": "kkk",
-      "firstName": "kkkkkk",
-      "lastName": "kkkkkkkk",
-      "id": 8
-    },
-    {
-      "email": "lllll@k",
-      "password": "$2a$10$KE.RI72agq9Qu5dy2u6K1OynSSHMX8yll1HVfGO6l93ecbxAwyYdi",
-      "username": "ellll",
-      "firstName": "kkkkk",
-      "lastName": "kkkkkk",
-      "id": 9
-    },
-    {
-      "email": "mmm@m",
-      "password": "$2a$10$po1kOOi39BsuQfmJ3ScchOK0Lc6Fq.6b37ZAeeHg47n7le9Fe8Nna",
-      "username": "mmmmmm",
-      "firstName": "mmmm",
-      "lastName": "mmmmmm",
-      "id": 10
-    },
-    {
-      "email": "n@n",
-      "password": "$2a$10$KbxtoSPZaq4eXCo3s2K1u.uayt46X2fAPy2xKzixIpJh1ftztse6K",
-      "username": "nnnn",
-      "firstName": "nnnnnnnn",
-      "lastName": "nnnnnnn",
-      "id": 11
-    },
-    {
-      "email": "eka@eka",
-      "password": "$2a$10$lsUob2zuGk9J.Kb2WXcBte/53UFYJayIqVeib.ljyU6xSlv5h2fu2",
-      "username": "ekaterine18",
-      "firstName": "eka",
-      "lastName": "eka",
-      "id": 12
-    },
-    {
-      "email": "test@com",
-      "password": "$2a$10$G0DxJQnyWTcMLzmcXkKhiufbNs6dJY/YvqN7IJZIHqmRycMP2YY4i",
-      "username": "mmsss",
-      "firstName": "mmm",
-      "lastName": "mmm",
-      "id": 13
-    },
-    {
-      "email": "test@testtt",
-      "password": "$2a$10$RDmy.hcQUKyuQbdvLyfdZeVRqfQyX2flpA2haiMG/mI40GXCq9nRW",
-      "username": "sani",
-      "firstName": "eka",
-      "lastName": "eka",
-      "id": 14
-    },
-    {
-      "email": "bb@bb",
-      "password": "$2a$10$KEBWN9JfPs8B/ORB.WW3XO4DQih.eYV6NCbGgM0T6tgZnovBnq94m",
-      "username": "bbbbb",
-      "firstName": "bbbb",
-      "lastName": "oooooooo",
-      "id": 15
-    },
-    {
-      "email": "vvv@vv",
-      "password": "$2a$10$T9DTdAIfCTZmKhplWUUCU.Rr9cC9yUyLYsl7oWqZ/FxjU.eMpn4xC",
-      "username": "vvvvv",
-      "firstName": "vvvvvvvvvvv",
-      "lastName": "vvvvvvv",
-      "id": 16
-    },
-    {
-      "email": "ddddd@d",
-      "password": "$2a$10$Rcxu9Lekyf0cxeihNd/jzuzp8x5sdiJ4DycYu.qVBHEqhhGEJCxZG",
-      "username": "dddddd",
-      "firstName": "dddddddddd",
-      "lastName": "ddddddddddd",
-      "id": 17
-    },
-    {
-      "email": "uuu@v",
-      "password": "$2a$10$k6G830UVN4vfC1AoTcOFzuKL0A8TVc5jGeKMUOyf3lZul6Z2.6Ll6",
-      "username": "elllli",
-      "firstName": "vvvvvvvv",
-      "lastName": "vvvvvvvvvv",
-      "id": 18
-    },
-    {
-      "email": "bbb@bbb",
-      "password": "$2a$10$hAM/TSzaJlkE8sQDNEmW7.XKGyHz..3cVA3pugS8OEygMGIshW0n2",
-      "username": "bbb",
-      "firstName": "bbbbbbb",
-      "lastName": "bbbbbb",
-      "id": 19
     }
   ],
   "posts": [
     {
-      "postId": null,
-      "author": "",
-      "userId": null,
+      "author": "ekaterine",
+      "title": "nnn",
+      "content": "nnnn",
+      "userId": 20,
       "comments": [],
-      "numberOfLikes": null,
-      "numberOfDislikes": null,
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
       "id": 1
     },
     {
-      "author": "",
-      "title": "eka",
-      "content": "eka",
-      "userId": null,
+      "author": "test",
+      "title": "bbbb",
+      "content": "bbbbbb",
+      "userId": 2,
       "comments": [],
-      "numberOfLikes": null,
-      "numberOfDislikes": null,
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
       "id": 2
     },
     {
-      "author": "",
-      "title": "bb",
-      "content": "bbbbb",
-      "userId": null,
+      "title": "bbbbbb",
+      "content": "bbbbbbbbbbbbbbb",
       "comments": [],
-      "numberOfLikes": null,
-      "numberOfDislikes": null,
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
       "id": 3
     },
-    [],
-    []
+    {
+      "title": "",
+      "content": "",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "id": 4
+    },
+    {
+      "title": "nnnn",
+      "content": "ddddddddd",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "id": 5
+    },
+    {
+      "author": "ekaterine",
+      "title": "eka",
+      "content": "ela",
+      "userId": 1,
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "id": 6
+    },
+    {
+      "title": "gggg",
+      "content": "cccc",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "id": 7
+    },
+    {
+      "author": "ekaterine",
+      "title": "poiu",
+      "content": "iopp",
+      "userId": 1,
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "id": 8
+    },
+    {
+      "title": "",
+      "content": "",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "id": 9
+    },
+    {
+      "title": "mmmmmmm",
+      "content": "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "id": 10
+    },
+    {
+      "title": "BBBBBBBB",
+      "content": "GGEESSAA",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "id": 11
+    },
+    {
+      "title": "kii",
+      "content": "nnn",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "id": 12
+    },
+    {
+      "title": "helo",
+      "content": "halo",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "date": "2022-02-25T18:35:40.396Z",
+      "id": 13
+    },
+    {
+      "author": "ekaterine",
+      "title": "satauri",
+      "content": "posti",
+      "userId": 1,
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "date": "2022-02-25T20:41:46.756Z",
+      "id": 14
+    },
+    {
+      "title": "post",
+      "content": "postaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "date": "2022-02-26T11:05:28.763Z",
+      "id": 15
+    },
+    {
+      "title": "LLL",
+      "content": "LLLLLLLLLLllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "date": "2022-02-26T11:42:02.963Z",
+      "id": 16
+    },
+    {
+      "title": "nnnnnnnnnn",
+      "content": "postaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "comments": [],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "date": "2022-02-26T11:42:16.823Z",
+      "id": 17
+    }
   ],
   "groups": [],
   "comments": []

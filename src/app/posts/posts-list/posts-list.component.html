@@ -1,21 +1,21 @@
-<div class="main_container">
-  <div class="post_wrapper">
-    <div class="postbtn_wrapper">
-      <button class="start_post" mat-button (click)="openDialog()">
+
+     <div class="postbtn_wrapper">
+      <button
+        class="start_post"
+        mat-button
+        (click)="openDialog()"
+        routerLink="/posts/new"
+      >
         Start a post
       </button>
     </div>
-    <hr />
-    <app-post-item *ngFor="let postEl of posts; let i = index"
-    [post]="postEl"
-    [index]="i"
-    ></app-post-item>
-  </div>
+<app-sort></app-sort>
 
-  <div class="item-3">
-    <!-- <app-groups-list></app-groups-list> -->
-  </div>
-</div>
+    <app-post-item
+      *ngFor="let postEl of posts; let i = index"
+      [post]="postEl"
+      [index]="i"
+    ></app-post-item>
 
 <!--
 (postSelected)="onPostSelected(postEl)" -->

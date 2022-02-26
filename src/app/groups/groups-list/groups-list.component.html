@@ -1,18 +1,12 @@
-<div class="groups-list">
-  <h2>My Groups</h2>
-  <ul>
-    <a href=""><li>group item 1</li></a>
-    <a href=""><li>group item 1</li></a>
-    <a href=""><li>group item 1</li></a>
-    <a href=""><li>group item 1</li></a>
-  </ul>
-  <div class="group-dialog-wrapper">
-    <div class="groupbtn_wrapper">
-      <button class="create_group" mat-button (click)="openDialog()">
-        create group
-      </button>
-    </div>
-    <button class="search_group" mat-button routerLink="/groups">
-      search group
-    </button>
+
+<div class="group_actions">
+  <mat-action-list class="actions">
+    <button mat-list-item (click)="openDialog()" routerLink="createGroup"> create group </button>
+    <button routerLink="/groups" mat-list-item > search group </button>
+  </mat-action-list>
+
+  <mat-list class="list">
+   <h3> My Groups</h3>
+    <a mat-list-item routerLink="/groups/:id" *ngFor="let link of links"> {{ link }} </a>
+  </mat-list>
 </div>

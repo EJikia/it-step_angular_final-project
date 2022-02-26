@@ -1,6 +1,9 @@
-.post-page_wrapper{
-  width: 100%;
+
+main{
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
+.posts {
+  width: 70%;
+  margin: 0 auto;
+}
+

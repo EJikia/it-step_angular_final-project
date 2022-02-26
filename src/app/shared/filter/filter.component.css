@@ -1,0 +1,12 @@
+
+.filter_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: mediumseagreen;
+  color: #f1f1f1;
+  font-weight: bold;
+}
+input {
+  padding: 5px;
+}
