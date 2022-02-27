@@ -6,14 +6,14 @@ export class Post {
   public author?: string | null;
   public userId?: number | null;
   public comments?: Comment[] | null;
-  public numberOfLikes?: number | null;
+  public numberOfLikes?: number;
   public numberOfDislikes?: number | null;
   public date?: string | null | Date;
   public id?: number ;
 
   constructor(
     title: string | null, content: string | null, author?: string | null, userId?: number | null,comments?: Comment[] | null,
-    numberOfLikes?: number | null, numberOfDislikes?: number | null, date?: string | null | Date, id?: number ) {
+    numberOfLikes?: number, numberOfDislikes?: number | null, date?: string | null | Date, id?: number ) {
 
     this.author = author;
     this.title = title;

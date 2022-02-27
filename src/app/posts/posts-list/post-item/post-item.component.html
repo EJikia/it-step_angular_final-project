@@ -23,8 +23,8 @@
   <mat-card-actions align="end">
       <p>comments:</p>
 
-      <button mat-button>Like 5</button>
-      <button mat-button>Dislike  5</button>
+      <button #ref mat-button disabled="false" (click)="onLikeCliked(ref, ref1)">Like {{post.numberOfLikes}}</button>
+      <button #ref1 mat-button disabled="false" (click)="onDislikeClicked(ref1, ref)">Dislike {{post.numberOfDislikes}}</button>
 
   </mat-card-actions>
   <div class="date">

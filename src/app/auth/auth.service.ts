@@ -83,12 +83,7 @@ export class AuthService {
     return !this.jwtHelper.isTokenExpired(token || undefined);
   }
 
-  // autoLogin(){
-  //   const token = localStorage.getItem('token');
-  // if (!token) {
-  //   return
-  // }
-// }
+
   getDecodedToken() {
     return this.jwtHelper.decodeToken(localStorage.getItem('token') || undefined);
   }
@@ -138,7 +133,7 @@ export class AuthService {
 
 
   }
-  updateUser(id: number, email: string, username: string, firstName: string, lastName: string, ) {
+  updateUser(id: number, email: string, username: string, firstName: string, lastName: string,) {
     console.log("shemovida", firstName)
     this.http.patch(`${this.signUpURL}/${id}`, {
       email: email,

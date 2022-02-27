@@ -20,7 +20,7 @@
       "email": "s@d",
       "password": "$2a$10$CFanMy3p3Ku7WL1Hsm1aiuiiTL4HfQ.V1leh6SqXK8SnD1zIkjtR.",
       "username": "sandro",
-      "firstName": "sandriko",
+      "firstName": "eka",
       "lastName": "aaaaaaaa",
       "id": 3
     }
@@ -28,13 +28,13 @@
   "posts": [
     {
       "author": "sandro",
-      "title": "hgvnbm",
-      "content": "dfxcgbhjnm",
+      "title": "ekkk",
+      "content": "bjsdv m,cx",
       "userId": 3,
       "comments": [],
       "numberOfLikes": 0,
       "numberOfDislikes": 0,
-      "date": "2022-02-27T12:50:19.966Z",
+      "date": "2022-02-27T15:18:10.313Z",
       "id": 1
     }
   ],
