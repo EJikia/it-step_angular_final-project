@@ -23,6 +23,7 @@ export class PostsService {
   addPost(post: Post) {
     post.userId = this.authService.userId;
     post.comments = [];
+    post.reactions = [];
     post.date = new Date()
     console.log(post);
     return this.http.post(this.postsURL, post).subscribe();

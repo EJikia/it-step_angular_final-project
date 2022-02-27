@@ -6,6 +6,9 @@ import { ShareDataService } from 'src/app/services/share-data.service';
 import { Post } from '../../../models/post';
 import { PostDialogBoxComponent } from '../post-dialog-box/post-dialog-box.component';
 import { take, first } from 'rxjs/operators'
+import { AuthService } from 'src/app/auth/auth.service';
+import { identifierName } from '@angular/compiler';
+import { Reaction } from 'src/app/models/reaction';
 @Component({
   selector: 'app-post-item',
   templateUrl: './post-item.component.html',
@@ -16,15 +19,35 @@ export class PostItemComponent implements OnInit {
   @Input() index!: number;
   @Output() postSelected = new EventEmitter<void>();
   @Output() isEditMode!: boolean;
+  numOfLikes!: number;
+  numOfDislikes!: number;
+  liked: boolean | null = null;
 
   constructor(private router: Router,
     private postsService: PostsService,
+    private authService: AuthService,
     public dialog: MatDialog,
     private shareDataService: ShareDataService) { }
 
   ngOnInit(): void {
+    this.reactionsCounter()
+    let postReactions = this.post.reactions;
+    let userReaction = postReactions?.find(i => i.userId == this.authService.userId);
+    if (userReaction == undefined) {
+      this.liked = null;
+    }
+    this.liked = <any>userReaction?.isLiked;
   }
-  onSelected() {
+  reactionsCounter() {
+    const reactions = this.post.reactions;
+    if (reactions != null || reactions != undefined) {
+      let numOfLikes = reactions.filter(i => i.isLiked);
+      this.numOfLikes = numOfLikes.length;
+      this.numOfDislikes = reactions.length - this.numOfLikes;
+    } else {
+      this.numOfDislikes = 0;
+      this.numOfLikes = 0;
+    }
 
 
   }
@@ -45,21 +68,23 @@ export class PostItemComponent implements OnInit {
     });
 
   }
-  // onLikeCliked(ref: any, ref1: any) {
-  //   ref._disabled = !ref._disabled
-  //   ref1._disabled = !ref._disabled
-  //   if (Number(this.post.numberOfDislikes)>0){
-  //   this.post.numberOfDislikes=Number(this.post.numberOfDislikes)-1;
-  // }
-  //   this.post.numberOfLikes=Number(this.post.numberOfLikes)+1;
-  // }
-  // onDislikeClicked(ref: any, ref1: any) {
-  //   ref._disabled = !ref._disabled
-  //   ref1._disabled = !ref._disabled
-  //   this.post.numberOfDislikes=Number(this.post.numberOfDislikes)+1;
-  //   if (Number(this.post.numberOfLikes)>0){
-  //   this.post.numberOfLikes=Number(this.post.numberOfLikes)-1;
-  // }
-  // }
+
+  onReactionCliked(isLike: boolean) {
+
+    const userId = this.authService.userId;
+    const reaction = this.post.reactions?.find(i => i.userId == userId);
+    if (reaction != null || reaction != undefined) {
+      reaction.isLiked = isLike;
+      this.postsService.updatePost(this.post);
+    } else {
+      const reaction = new Reaction(true, userId);
+      this.post.reactions?.push(reaction);
+      this.postsService.updatePost(this.post);
+
+    }
+    this.liked = isLike;
+    this.reactionsCounter()
+  }
+
 
 }

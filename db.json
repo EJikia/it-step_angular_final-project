@@ -23,102 +23,75 @@
       "firstName": "eka",
       "lastName": "aaaaaaaa",
       "id": 3
+    },
+    {
+      "email": "e@e",
+      "password": "$2a$10$MLsGyeeWQKNEaCDwLzX6Suq.moyT.Ef/SNOxNsbAw8mZGsw3o/eIy",
+      "username": "sandroaaaa",
+      "firstName": "eka",
+      "lastName": "sdk",
+      "id": 4
     }
   ],
   "posts": [
     {
-      "author": "sandro",
-      "title": "sandro",
-      "content": "eka",
-      "userId": 3,
-      "comments": [
-        {
-          "author": "sandro",
-          "userId": 3,
-          "content": "sfdsdfd",
-          "postId": 3
-        },
-        {
-          "content": "dsfsd",
-          "postId": 3
-        }
-      ],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-27T16:46:38.515Z",
-      "id": 3
-    },
-    {
-      "author": "sandro",
-      "title": "davanati",
-      "content": "edjgsjgsd",
-      "userId": 3,
-      "comments": [
-        {
-          "author": "sandro",
-          "userId": 3,
-          "content": "comentari",
-          "postId": 4
-        },
-        {
-          "author": "sandro",
-          "userId": 3,
-          "content": "comentari",
-          "postId": 4
-        },
-        {
-          "content": "weaeds",
-          "postId": 4
-        },
-        {
-          "content": "ads",
-          "postId": 4
-        },
-        {
-          "author": "sandro",
-          "userId": 3,
-          "content": "heloo",
-          "postId": 4
-        },
-        {
-          "author": "sandro",
-          "userId": 3,
-          "content": "hi\n",
-          "postId": 4
-        }
-      ],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-27T17:16:14.207Z",
-      "id": 4
-    },
-    {
-      "author": "sandro",
-      "title": "asfa",
-      "content": "eka",
-      "userId": 3,
-      "comments": [
-        {
-          "author": "sandro",
-          "userId": 3,
-          "content": "komentar",
-          "postId": 5
-        }
-      ],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-27T17:59:52.650Z",
-      "id": 5
-    },
-    {
-      "title": "eka",
-      "content": "eka",
+      "title": "asfagsjk",
+      "content": "jk,dsvxc",
       "userId": 3,
       "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-27T19:04:36.933Z",
-      "id": 6
+      "reactions": [
+        {
+          "isLiked": true,
+          "userId": 3
+        },
+        {
+          "isLiked": true,
+          "userId": 4
+        }
+      ],
+      "date": "2022-02-27T20:36:02.666Z",
+      "id": 1,
+      "user": {
+        "email": "s@d",
+        "password": "$2a$10$CFanMy3p3Ku7WL1Hsm1aiuiiTL4HfQ.V1leh6SqXK8SnD1zIkjtR.",
+        "username": "sandro",
+        "firstName": "eka",
+        "lastName": "aaaaaaaa",
+        "id": 3
+      }
+    },
+    {
+      "title": "ewhgbjn",
+      "content": "hjbndf",
+      "userId": 3,
+      "comments": [
+        {
+          "author": "sandroaaaa",
+          "userId": 4,
+          "content": "heloo",
+          "postId": 2
+        }
+      ],
+      "reactions": [
+        {
+          "isLiked": true,
+          "userId": 3
+        },
+        {
+          "isLiked": true,
+          "userId": 4
+        }
+      ],
+      "date": "2022-02-27T20:59:38.504Z",
+      "id": 2,
+      "user": {
+        "email": "s@d",
+        "password": "$2a$10$CFanMy3p3Ku7WL1Hsm1aiuiiTL4HfQ.V1leh6SqXK8SnD1zIkjtR.",
+        "username": "sandro",
+        "firstName": "eka",
+        "lastName": "aaaaaaaa",
+        "id": 3
+      }
     }
   ],
   "groups": [],

@@ -1,15 +1,13 @@
 
 export class Reaction {
 
-  public isLiked: boolean;
+  public isLiked: boolean | null;
   public userId?: number;
-  public postId?: number;
 
 
-  constructor(isLiked: boolean, userId?: number, postId?: number) {
+  constructor(isLiked: boolean | null, userId?: number) {
     this.isLiked = isLiked;
     this.userId = userId;
-    this.postId = postId;
 
   }
 }

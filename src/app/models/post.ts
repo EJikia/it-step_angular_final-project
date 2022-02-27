@@ -7,20 +7,20 @@ export class Post {
   public content: string | null;
   public userId?: number;
   public comments?: Comment[] | null;
-  public isLiked?: Reaction;
+  public reactions?: Reaction[] | null;
   public date?: string | null | Date;
   public id?: number ;
   public user?: User;
 
   constructor(
     title: string | null, content: string | null,  userId?: number ,comments?: Comment[] | null,
-    isLiked?: Reaction, date?: string | null | Date, id?: number, user?: User ) {
+    reaction?: Reaction[] | null, date?: string | null | Date, id?: number, user?: User ) {
 
     this.title = title;
     this.content = content;
     this.userId=userId;
     this.comments = comments;
-    this.isLiked = isLiked;
+    this.reactions = reaction;
     this.date=date;
     this.id = id;
     this.user = user;
