@@ -21,6 +21,7 @@ export class PostsService {
   addPost(post: Post) {
     console.log("aq xom ara?")
     post.author = this.authService.username;
+    console.log("aq xom ara avtori", post.author)
     post.userId = this.authService.userId;
     post.comments = [];
     post.numberOfLikes = 0;

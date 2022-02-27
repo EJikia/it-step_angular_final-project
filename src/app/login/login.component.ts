@@ -12,9 +12,10 @@ export class LoginComponent implements OnInit {
   isLoading = false;
   error: string = "";
   loginForm = new FormGroup({});
+
   constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
     this.loginForm = formBuilder.group({
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required)
     })
   }
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
 

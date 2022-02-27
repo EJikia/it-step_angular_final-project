@@ -60,7 +60,6 @@ export class PostsListComponent implements OnInit {
   //   this.router.navigate(['new'], {relativeTo: this.route});
   // }
   setUpdatedPosts() {
-    console.log("Semoivda")
 console.log (this.posts +"setupdateshi")
        this.loadPosts();
   }

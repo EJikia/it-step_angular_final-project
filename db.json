@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "email": "e@e",
+      "email": "kako@yachagi",
       "password": "$2a$10$RPw4vEwgURojeiNm/clDM.Fke1Ag8wo/qiCRago0T7TgU9Tp102bK",
       "username": "ekaterine",
-      "firstName": "e",
+      "firstName": "vaaxraa",
       "lastName": "e",
       "id": 1
     },
@@ -15,28 +15,27 @@
       "firstName": "test",
       "lastName": "test",
       "id": 2
+    },
+    {
+      "email": "s@d",
+      "password": "$2a$10$CFanMy3p3Ku7WL1Hsm1aiuiiTL4HfQ.V1leh6SqXK8SnD1zIkjtR.",
+      "username": "sandro",
+      "firstName": "vaja",
+      "lastName": "aaaaaaaa",
+      "id": 3
     }
   ],
   "posts": [
     {
-      "author": "ekaterine",
-      "title": "nome",
-      "content": "dssdf",
-      "userId": 1,
+      "author": "sandro",
+      "title": "hgvnbm",
+      "content": "dfxcgbhjnm",
+      "userId": 3,
       "comments": [],
       "numberOfLikes": 0,
       "numberOfDislikes": 0,
-      "date": "2022-02-27T02:02:02.775Z",
+      "date": "2022-02-27T12:50:19.966Z",
       "id": 1
-    },
-    {
-      "title": "vauuu",
-      "content": "sbassa",
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-27T02:21:36.785Z",
-      "id": 2
     }
   ],
   "groups": [],

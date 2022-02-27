@@ -24,16 +24,22 @@ export interface AuthResponseData {
 export class AuthService {
   // user = new BehaviorSubject<any>(null)
   user = new BehaviorSubject<any>(null);
+  email!: string;
   username!: string;
+  firstName!: string;
+  lastName!: string
   userId!: number;
   jwtHelper = new JwtHelperService();
 
-  signUpURL = "http://localhost:3000/signup";
+  signUpURL = "http://localhost:3000/users";
   signInURL = "http://localhost:3000/signin";
   constructor(private http: HttpClient, private router: Router) { }
 
 
+  getUserData() {
+    return this.http.get(`${this.signUpURL}/${this.userId}`)
 
+  }
   signUp(username: string, email: string, firstName: string, lastName: string, password: string) {
     return this.http
       .post<AuthResponseData>(
@@ -72,17 +78,25 @@ export class AuthService {
       );
   }
 
-  loggedIn () {
-    const token =localStorage.getItem('token');
+  loggedIn() {
+    const token = localStorage.getItem('token');
     return !this.jwtHelper.isTokenExpired(token || undefined);
   }
+
+  // autoLogin(){
+  //   const token = localStorage.getItem('token');
+  // if (!token) {
+  //   return
+  // }
+// }
   getDecodedToken() {
     return this.jwtHelper.decodeToken(localStorage.getItem('token') || undefined);
   }
   logout() {
     this.user.next(null);
     this.router.navigate(['/login']);
-    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
 
   }
   private handleError(errorRes: HttpErrorResponse) {
@@ -116,11 +130,28 @@ export class AuthService {
     this.user.next(user);
     this.userId = id;
     this.username = username;
+    this.firstName = firstName;
+    this.email = email;
+    this.lastName = lastName;
     localStorage.setItem('token', JSON.stringify(user.accessToken))
     localStorage.setItem('id', JSON.stringify(user.id))
 
 
   }
+  updateUser(id: number, email: string, username: string, firstName: string, lastName: string, ) {
+    console.log("shemovida", firstName)
+    this.http.patch(`${this.signUpURL}/${id}`, {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      username: username,
+    }).subscribe((resData: any) => {
+      this.email = resData.email,
+        this.username = resData.username,
+        this.firstName = resData.firstName,
+        this.lastName = resData.lastName,
+        console.log(this.email, this.firstName)
 
-
+    })
+  }
 }
