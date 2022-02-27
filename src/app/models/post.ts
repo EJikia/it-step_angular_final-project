@@ -9,11 +9,11 @@ export class Post {
   public numberOfLikes?: number | null;
   public numberOfDislikes?: number | null;
   public date?: string | null | Date;
-  public id?: number | null;
+  public id?: number ;
 
   constructor(
     title: string | null, content: string | null, author?: string | null, userId?: number | null,comments?: Comment[] | null,
-    numberOfLikes?: number | null, numberOfDislikes?: number | null, date?: string | null | Date, id?: number | null ) {
+    numberOfLikes?: number | null, numberOfDislikes?: number | null, date?: string | null | Date, id?: number ) {
 
     this.author = author;
     this.title = title;

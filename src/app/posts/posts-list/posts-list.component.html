@@ -15,6 +15,7 @@
       *ngFor="let postEl of posts; let i = index"
       [post]="postEl"
       [index]="i"
+      (postSelected)="setUpdatedPosts()"
     ></app-post-item>
 
 <!--

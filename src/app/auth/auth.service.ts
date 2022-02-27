@@ -116,7 +116,6 @@ export class AuthService {
     this.user.next(user);
     this.userId = id;
     this.username = username;
-    console.log(id,username);
     localStorage.setItem('token', JSON.stringify(user.accessToken))
     localStorage.setItem('id', JSON.stringify(user.id))
 

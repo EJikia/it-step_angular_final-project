@@ -12,23 +12,36 @@ export class PostsService {
   // private posts: Post[] = [];
 
   baseURL = "http://localhost:3000/posts"
-  constructor( private authService: AuthService, private http: HttpClient) {}
+  constructor(private authService: AuthService, private http: HttpClient) { }
 
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.baseURL)
-   }
+  }
 
-   addPost(post: Post){
-     post.author=this.authService.username;
-     post.userId=this.authService.userId;
-     post.comments=[];
-     post.numberOfLikes=0;
-     post.numberOfDislikes=0;
-     post.date= new Date()
-     console.log(post);
-    return this.http.post(this.baseURL,post).subscribe();
+  addPost(post: Post) {
+    console.log("aq xom ara?")
+    post.author = this.authService.username;
+    post.userId = this.authService.userId;
+    post.comments = [];
+    post.numberOfLikes = 0;
+    post.numberOfDislikes = 0;
+    post.date = new Date()
+    console.log(post);
+    return this.http.post(this.baseURL, post).subscribe();
 
-   }
+  }
+
+  deletePost(id: number) {
+    this.http.delete(`${this.baseURL}/${id}`).subscribe();
+  }
+
+  updatePost(id: number, title: string, content: string) {
+    console.log("shamevida")
+    return this.http.patch(`${this.baseURL}/${id}`, { title: title, content: content }).subscribe(data =>{
+      console.log(data)
+    })
+
+  }
   // setPosts(posts: Post[]) {
   //   this.posts = posts;
   //   this.postsChanged.next(this.posts.slice());

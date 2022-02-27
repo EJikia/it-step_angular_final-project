@@ -20,36 +20,23 @@
   "posts": [
     {
       "author": "ekaterine",
-      "title": "viyaviVIYAVI",
-      "content": "vdjkg",
+      "title": "nome",
+      "content": "dssdf",
       "userId": 1,
       "comments": [],
       "numberOfLikes": 0,
       "numberOfDislikes": 0,
-      "date": "2022-02-26T15:54:45.422Z",
-      "id": 45
+      "date": "2022-02-27T02:02:02.775Z",
+      "id": 1
     },
     {
-      "author": "ekaterine",
-      "title": "adekvaturiposti",
-      "content": "adekvaturia?",
-      "userId": 1,
+      "title": "vauuu",
+      "content": "sbassa",
       "comments": [],
       "numberOfLikes": 0,
       "numberOfDislikes": 0,
-      "date": "2022-02-26T15:56:29.169Z",
-      "id": 46
-    },
-    {
-      "author": "ekaterine",
-      "title": "gbg",
-      "content": "nfskdgs",
-      "userId": 1,
-      "comments": [],
-      "numberOfLikes": 0,
-      "numberOfDislikes": 0,
-      "date": "2022-02-26T15:58:28.270Z",
-      "id": 47
+      "date": "2022-02-27T02:21:36.785Z",
+      "id": 2
     }
   ],
   "groups": [],

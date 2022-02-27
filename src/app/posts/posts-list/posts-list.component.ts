@@ -16,7 +16,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class PostsListComponent implements OnInit {
   @Output() postWasSelected = new EventEmitter<Post>();
-  @Input("postsList") posts!: Post[]
+  posts!: Post[]
   subscription!: Subscription;
   constructor(public dialog: MatDialog, private postsService: PostsService, private router: Router,
     private route: ActivatedRoute, private dataStorageService: DataStorageService, private authservice: AuthService) { }
@@ -24,28 +24,30 @@ export class PostsListComponent implements OnInit {
   ngOnInit(): void {
     this.loadPosts()
     // this.subscription = this.postsService.postsChanged
-      // .subscribe(
-      //   (posts: Post[]) => {
-      //     this.posts = posts;
-      //     console.log(this.posts)
-      //   }
-      // );
+    // .subscribe(
+    //   (posts: Post[]) => {
+    //     this.posts = posts;
+    //     console.log(this.posts)
+    //   }
+    // );
     // this.posts = this.postsService.getPosts();
 
   }
 
   loadPosts() {
     this.postsService.getPosts().subscribe(resData => {
-      this.posts = resData
+      this.posts = resData;
       this.posts.reverse();
+
     })
+
+        console.log(this.posts+"loadshi")
   }
   openDialog() {
 
     const dialogRef = this.dialog.open(PostDialogBoxComponent, { width: '50%', disableClose: true });
-
     dialogRef.afterClosed().subscribe(
-        () =>
+      () =>
         this.loadPosts()
     );
   }
@@ -57,9 +59,12 @@ export class PostsListComponent implements OnInit {
   // onNewPosts() {
   //   this.router.navigate(['new'], {relativeTo: this.route});
   // }
+  setUpdatedPosts() {
+    console.log("Semoivda")
+console.log (this.posts +"setupdateshi")
+       this.loadPosts();
+  }
 
 }
-function input() {
-  throw new Error('Function not implemented.');
-}
+
 

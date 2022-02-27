@@ -5,8 +5,8 @@
     </button>
   </mat-card-actions>
   <mat-menu #edit="matMenu">
-    <button mat-menu-item (click)="onSelected()">Edit</button>
-    <button mat-menu-item (click)="onSelected()">Delete</button>
+    <button mat-menu-item (click)="onEdit()">Edit</button>
+    <button mat-menu-item (click)="onDelete()">Delete</button>
   </mat-menu>
   <mat-card-title
     ><a routerLink="/posts/:id" (click)="onSelected()">{{
