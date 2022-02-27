@@ -9,27 +9,44 @@
     <button mat-menu-item (click)="onDelete()">Delete</button>
   </mat-menu>
   <mat-card-title
-    ><a routerLink="/posts/:id" (click)="onSelected()">{{
+    ><a [routerLink]="['/posts/', post.id]" (click)="onSelected()">{{
       post.title
     }}</a></mat-card-title
   >
   <mat-card-subtitle>
-    <h2>{{ post.author }}</h2>
+    <h2>{{ post.user?.username }}</h2>
   </mat-card-subtitle>
   <mat-card-content>
     {{ post.content }}
   </mat-card-content>
 
   <mat-card-actions align="end">
-      <p>comments:</p>
+    <p>
+      comments:
+      {{
+        post.comments == null || post.comments == undefined
+          ? "0"
+          : post.comments.length
+      }}
+    </p>
+    <!-- (click)="onLikeCliked(ref, ref1)" -->
 
-      <button #ref mat-button disabled="false" (click)="onLikeCliked(ref, ref1)">Like {{post.numberOfLikes}}</button>
-      <button #ref1 mat-button disabled="false" (click)="onDislikeClicked(ref1, ref)">Dislike {{post.numberOfDislikes}}</button>
+    <button #ref mat-button disabled="false" >
+      Like
+    </button>
+    <!-- (click)="onDislikeClicked(ref1, ref)" -->
+    <button
+      #ref1
+      mat-button
+      disabled="false"
 
+    >
+      Dislike
+    </button>
   </mat-card-actions>
   <div class="date">
     <p>{{ post.date }}</p>
   </div>
-  <!-- <app-post-detail *ngIf="postSelected"></app-post-detail> -->
+  <!--  <app-post-detail *ngIf="postSelected"></app-post-detail> -->
 </mat-card>
 <br />

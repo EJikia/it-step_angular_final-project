@@ -45,21 +45,21 @@ export class PostItemComponent implements OnInit {
     });
 
   }
-  onLikeCliked(ref: any, ref1: any) {
-    ref._disabled = !ref._disabled
-    ref1._disabled = !ref._disabled
-    if (Number(this.post.numberOfDislikes)>0){
-    this.post.numberOfDislikes=Number(this.post.numberOfDislikes)-1;
-  }
-    this.post.numberOfLikes=Number(this.post.numberOfLikes)+1;
-  }
-  onDislikeClicked(ref: any, ref1: any) {
-    ref._disabled = !ref._disabled
-    ref1._disabled = !ref._disabled
-    this.post.numberOfDislikes=Number(this.post.numberOfDislikes)+1;
-    if (Number(this.post.numberOfLikes)>0){
-    this.post.numberOfLikes=Number(this.post.numberOfLikes)-1;
-  }
-  }
+  // onLikeCliked(ref: any, ref1: any) {
+  //   ref._disabled = !ref._disabled
+  //   ref1._disabled = !ref._disabled
+  //   if (Number(this.post.numberOfDislikes)>0){
+  //   this.post.numberOfDislikes=Number(this.post.numberOfDislikes)-1;
+  // }
+  //   this.post.numberOfLikes=Number(this.post.numberOfLikes)+1;
+  // }
+  // onDislikeClicked(ref: any, ref1: any) {
+  //   ref._disabled = !ref._disabled
+  //   ref1._disabled = !ref._disabled
+  //   this.post.numberOfDislikes=Number(this.post.numberOfDislikes)+1;
+  //   if (Number(this.post.numberOfLikes)>0){
+  //   this.post.numberOfLikes=Number(this.post.numberOfLikes)-1;
+  // }
+  // }
 
 }

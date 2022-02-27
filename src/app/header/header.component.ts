@@ -23,9 +23,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, public router: Router) { }
 
   ngOnInit(): void {
-    this.authService.user.subscribe(user => {
-      this.isAuthenticated = !user ? false : true;
-    })
+    this.isAuthenticated=this.authService.loggedIn();
   }
   logout() {
     this.authService.logout()

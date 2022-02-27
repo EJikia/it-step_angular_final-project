@@ -6,15 +6,14 @@ export class Comment {
   public id?: number;
 
 
-constructor(author: string, userId: number, content: string, id: number, postId: number) {
-  this.author = author;
-  this.userId = userId;
-  this.content = content;
-  this.postId = postId;
-  this.id = id;
+  constructor(author: string, userId: number, content: string, postId: number, id?: number) {
+    this.author = author;
+    this.userId = userId;
+    this.content = content;
+    this.postId = postId;
+    this.id = id;
 
 
-
-}
+  }
 
 }

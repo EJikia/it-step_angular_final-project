@@ -28,14 +28,97 @@
   "posts": [
     {
       "author": "sandro",
-      "title": "ekkk",
-      "content": "bjsdv m,cx",
+      "title": "sandro",
+      "content": "eka",
+      "userId": 3,
+      "comments": [
+        {
+          "author": "sandro",
+          "userId": 3,
+          "content": "sfdsdfd",
+          "postId": 3
+        },
+        {
+          "content": "dsfsd",
+          "postId": 3
+        }
+      ],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "date": "2022-02-27T16:46:38.515Z",
+      "id": 3
+    },
+    {
+      "author": "sandro",
+      "title": "davanati",
+      "content": "edjgsjgsd",
+      "userId": 3,
+      "comments": [
+        {
+          "author": "sandro",
+          "userId": 3,
+          "content": "comentari",
+          "postId": 4
+        },
+        {
+          "author": "sandro",
+          "userId": 3,
+          "content": "comentari",
+          "postId": 4
+        },
+        {
+          "content": "weaeds",
+          "postId": 4
+        },
+        {
+          "content": "ads",
+          "postId": 4
+        },
+        {
+          "author": "sandro",
+          "userId": 3,
+          "content": "heloo",
+          "postId": 4
+        },
+        {
+          "author": "sandro",
+          "userId": 3,
+          "content": "hi\n",
+          "postId": 4
+        }
+      ],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "date": "2022-02-27T17:16:14.207Z",
+      "id": 4
+    },
+    {
+      "author": "sandro",
+      "title": "asfa",
+      "content": "eka",
+      "userId": 3,
+      "comments": [
+        {
+          "author": "sandro",
+          "userId": 3,
+          "content": "komentar",
+          "postId": 5
+        }
+      ],
+      "numberOfLikes": 0,
+      "numberOfDislikes": 0,
+      "date": "2022-02-27T17:59:52.650Z",
+      "id": 5
+    },
+    {
+      "title": "eka",
+      "content": "eka",
       "userId": 3,
       "comments": [],
       "numberOfLikes": 0,
       "numberOfDislikes": 0,
-      "date": "2022-02-27T15:18:10.313Z",
-      "id": 1
+      "date": "2022-02-27T19:04:36.933Z",
+      "id": 6
     }
   ],
   "groups": [],

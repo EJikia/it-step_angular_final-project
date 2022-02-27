@@ -78,29 +78,22 @@ export class PostDialogBoxComponent implements OnInit {
       const post = new Post(title, content);
       this.postsService.addPost(post);
       this.dialogRef.close();
-      // this.router.navigate(["posts"]).then(() => {
-      //   window.location.reload();
-      // });
+
     }
-    // const author = this.authService.username;
-    // const post = new Post(title, content, author)
-    // this.postsService.addPost(post);
-    // this.dataStorageService.storePosts()
+
   }
   onEditPost() {
     console.log('edit');
 
       const id: any = this.data.id
       const title = this.postForm.value.title;
-
       const content = this.postForm.value.content;
      const post = {
        id: id,
        title:title,
        content: content
      }
-      console.log(title,content, "ratooo")
-      this.postsService.updatePost(id, title, content);
+      this.postsService.updatePost(post);
       this.isEditMode = false;
       this.checkEditMode()
       this.dialogRef.close(post);

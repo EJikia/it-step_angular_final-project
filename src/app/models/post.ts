@@ -1,29 +1,29 @@
 import { Comment } from "./comment";
+import { Reaction } from "./reaction";
+import { User } from "./user";
 export class Post {
 
   public title: string | null;
   public content: string | null;
-  public author?: string | null;
-  public userId?: number | null;
+  public userId?: number;
   public comments?: Comment[] | null;
-  public numberOfLikes?: number;
-  public numberOfDislikes?: number | null;
+  public isLiked?: Reaction;
   public date?: string | null | Date;
   public id?: number ;
+  public user?: User;
 
   constructor(
-    title: string | null, content: string | null, author?: string | null, userId?: number | null,comments?: Comment[] | null,
-    numberOfLikes?: number, numberOfDislikes?: number | null, date?: string | null | Date, id?: number ) {
+    title: string | null, content: string | null,  userId?: number ,comments?: Comment[] | null,
+    isLiked?: Reaction, date?: string | null | Date, id?: number, user?: User ) {
 
-    this.author = author;
     this.title = title;
     this.content = content;
     this.userId=userId;
     this.comments = comments;
-    this.numberOfLikes = numberOfLikes;
-    this.numberOfDislikes = numberOfDislikes;
+    this.isLiked = isLiked;
     this.date=date;
     this.id = id;
+    this.user = user;
   }
 
 

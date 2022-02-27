@@ -33,8 +33,22 @@ export class AuthService {
 
   signUpURL = "http://localhost:3000/users";
   signInURL = "http://localhost:3000/signin";
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {
+    let user = localStorage.getItem('user');
+    if(user != null){
+      const userData = JSON.parse(user);
+      this.userId = userData.id;
+      this.username = userData.username;
+      this.firstName = userData.firstName;
+      this.email = userData.email;
+      this.lastName = userData.lastName;
+    }
 
+    // if (userData !== "") {
+    //   this.
+    // }
+
+  }
 
   getUserData() {
     return this.http.get(`${this.signUpURL}/${this.userId}`)
@@ -87,6 +101,10 @@ export class AuthService {
   getDecodedToken() {
     return this.jwtHelper.decodeToken(localStorage.getItem('token') || undefined);
   }
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
   logout() {
     this.user.next(null);
     this.router.navigate(['/login']);
@@ -129,7 +147,7 @@ export class AuthService {
     this.email = email;
     this.lastName = lastName;
     localStorage.setItem('token', JSON.stringify(user.accessToken))
-    localStorage.setItem('id', JSON.stringify(user.id))
+    localStorage.setItem('user', JSON.stringify(user))
 
 
   }

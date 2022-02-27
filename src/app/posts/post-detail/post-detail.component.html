@@ -1,44 +1,42 @@
 <div class="container">
-<mat-card class="post-wrapper">
-  <mat-card-actions align="end" class="edit_btn">
-    <button mat-button [matMenuTriggerFor]="edit" class="edit">
-      <mat-icon>edit</mat-icon>
-    </button>
-  </mat-card-actions>
-  <mat-menu #edit="matMenu">
-    <button mat-menu-item>Edit</button>
-    <button mat-menu-item>Delete</button>
-  </mat-menu>
-  <mat-card-title><a routerLink="/posts/:id"></a>title</mat-card-title>
-  <mat-card-subtitle>
-    <h2>lala</h2>
-  </mat-card-subtitle>
-  <mat-card-content>
-    <p>lands</p>
-  </mat-card-content>
-</mat-card>
-<div class="comments">
-  <form class="comment_form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <textarea
-        matInput
-        class="comment_input"
-        placeholder="Leave a comment..."
-      ></textarea>
-    </mat-form-field>
-  </form>
+  <mat-card class="post-wrapper">
+    <mat-card-actions align="end" class="edit_btn">
+      <button mat-button [matMenuTriggerFor]="edit" class="edit">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-card-actions>
+    <mat-menu #edit="matMenu">
+      <button mat-menu-item>Edit</button>
+      <button mat-menu-item>Delete</button>
+    </mat-menu>
+    <mat-card-title> {{ post.title }} </mat-card-title>
+    <mat-card-subtitle>
+      <h2>{{ post.user?.username }}</h2>
+    </mat-card-subtitle>
+    <mat-card-content>
+      <p>{{ post.content }}</p>
+    </mat-card-content>
+  </mat-card>
+  <div class="comments">
+    <form
+      class="comment_form"
+      [formGroup]="commentForm"
+      (ngSubmit)="addComment()"
+    >
+      <mat-form-field appearance="fill">
+        <textarea
+          matInput
+          class="comment_input"
+          placeholder="Leave a comment..."
+          formControlName="content"
+        ></textarea>
+        <button mat-button type="submit" [disabled]="!commentForm.valid">add comment</button>
+      </mat-form-field>
+    </form>
 
-  <div class="comment">
-    <h3 class="comment_author">Eka Jikia</h3>
-    <p class="comment_content"></p>
+    <div *ngFor="let comment of post.comments" class="comment">
+      <h3 class="comment_author">{{comment.author}}</h3>
+      <p class="comment_content"> {{comment.content}}</p>
+    </div>
   </div>
-  <div class="comment">
-    <h3 class="comment_author">Eka Jikia</h3>
-    <p class="comment_content"></p>
-  </div>
-  <div class="comment">
-    <h3 class="comment_author">Eka Jikia</h3>
-    <p class="comment_content"></p>
-  </div>
-</div>
 </div>

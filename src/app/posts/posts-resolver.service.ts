@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {
   Resolve,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  RouterStateSnapshot,
+  Router
 } from '@angular/router';
 import { DataStorageService } from '../services/data-storage.service';
 import { PostsService } from '../services/posts.service';
@@ -13,17 +14,12 @@ import { PostsService } from '../services/posts.service';
 export class PostsResolverService {
 
   constructor(
-    private dataStorageService: DataStorageService,
-    private postsService: PostsService
+    private postsService: PostsService,
+    private router: Router
   ) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    // const posts = this.postsService.getPosts();
+    return this.postsService.getPost(route.params['id'])
 
-    // if (posts.length === 0) {
-    //   return this.dataStorageService.fetchPosts();
-    // } else {
-    //   return posts;
-    // }
   }
 }

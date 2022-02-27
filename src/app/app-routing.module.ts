@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'groups/:id', component: GroupDetailComponent, canActivate: [AuthGuard]},
   { path: 'update-user-info', component: SettingsPageComponent, canActivate: [AuthGuard] },
   { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
-  { path: 'posts/:id', component: PostDetailComponent, resolve: [PostsResolverService], canActivate: [AuthGuard] },
+  { path: 'posts/:id', component: PostDetailComponent, resolve: {post: PostsResolverService}, canActivate: [AuthGuard] },
   { path: 'posts/:id/edit',  component: PostDialogBoxComponent,resolve: [PostsResolverService], canActivate: [AuthGuard]},
   { path: 'posts/createGroup', component:GroupDialogBoxComponent,canActivate: [AuthGuard] },
   { path: '**', component: PageNotFoundComponent },
