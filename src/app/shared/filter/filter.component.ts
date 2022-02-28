@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
-
+  value!: string;
+  @Output() searchEvent = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onClick(value:string){
+    this.searchEvent.emit(value)
   }
 
 }

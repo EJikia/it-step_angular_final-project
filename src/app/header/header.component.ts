@@ -8,7 +8,7 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isAuthenticated = false;
+
   links = ['posts', 'groups'];
   activeLink = this.links[0];
   background: ThemePalette = undefined;
@@ -23,11 +23,14 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, public router: Router) { }
 
   ngOnInit(): void {
-    this.isAuthenticated=this.authService.loggedIn();
+
+  }
+  loggedIn(){
+    return this.authService.loggedIn();
+
   }
   logout() {
     this.authService.logout()
-    this.isAuthenticated = false;
     this.router.navigate(["/login"])
   }
 }

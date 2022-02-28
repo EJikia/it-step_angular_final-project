@@ -1,22 +1,21 @@
+<app-filter (searchEvent)="filterPosts($event)"></app-filter>
+<div class="postbtn_wrapper">
+  <button class="start_post" mat-button (click)="openDialog()">
+    Start a post
+  </button>
+</div>
+<div class="sort_wrapper">
+  <button mat-button [matMenuTriggerFor]="menu">sort by dates</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item type="button" (click)="oldestToNewest()">sort oldest to newest </button>
+    <button mat-menu-item type="button" (click)="newestToOldest()">sort newest to oldest</button>
+  </mat-menu>
+</div>
 
-     <div class="postbtn_wrapper">
-      <button
-        class="start_post"
-        mat-button
-        (click)="openDialog()"
+<app-post-item
+  *ngFor="let postEl of posts; let i = index"
+  [post]="postEl"
+  [index]="i"
+  (postSelected)="setUpdatedPosts()"
+></app-post-item>
 
-      >
-        Start a post
-      </button>
-    </div>
-<app-sort></app-sort>
-
-    <app-post-item
-      *ngFor="let postEl of posts; let i = index"
-      [post]="postEl"
-      [index]="i"
-      (postSelected)="setUpdatedPosts()"
-    ></app-post-item>
-
-<!--
-(postSelected)="onPostSelected(postEl)" -->

@@ -7,13 +7,13 @@ import { GroupDialogBoxComponent } from './groups/groups-list/group-dialog-box/g
 import { GroupsComponent } from './groups/groups.component';
 import { LoginComponent } from './login/login.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
-import { PostEditComponent } from './posts/post-edit/post-edit.component';
 import { PostDialogBoxComponent } from './posts/posts-list/post-dialog-box/post-dialog-box.component';
 import { PostsResolverService } from './posts/posts-resolver.service';
 import { PostsComponent } from './posts/posts.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
-import { PageNotFoundComponent } from './shared/loading-spinner/loading-spinner/page-not-found.component';
+import { PageNotFoundComponent } from './shared/page-not-found.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/posts', pathMatch: "full" },

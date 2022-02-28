@@ -6,6 +6,25 @@
 .mat-card-actions {
   margin: 0;
   padding: 0;
+  justify-content: space-between;
+}
+
+.btn_wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.clicked{
+  background-color: mediumseagreen;
+}
+
+.comment, .comment p {
+  display: flex;
+  margin: 0 8px;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .edit_btn {

@@ -1,8 +1,8 @@
 <div class="filter_wrapper">
 
 <div class="search_wrapper">
-  <input type="search" placeholder="search by title">
-  <button mat-button>search</button>
+  <input type="search" placeholder="search by title" #searchInput>
+  <button mat-button type="button" (click)="onClick(searchInput.value)">search</button>
 </div>
 </div>
 

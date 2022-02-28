@@ -7,6 +7,7 @@ import { Post } from 'src/app/models/post';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import { FilterService } from 'src/app/services/filter.service';
 
 
 @Component({
@@ -18,8 +19,7 @@ export class PostsListComponent implements OnInit {
   @Output() postWasSelected = new EventEmitter<Post>();
   posts!: Post[]
   subscription!: Subscription;
-  constructor(public dialog: MatDialog, private postsService: PostsService, private router: Router,
-    private route: ActivatedRoute, private dataStorageService: DataStorageService, private authservice: AuthService) { }
+  constructor(public dialog: MatDialog, private postsService: PostsService, private filterService: FilterService) { }
 
   ngOnInit(): void {
     this.loadPosts()
@@ -41,7 +41,7 @@ export class PostsListComponent implements OnInit {
 
     })
 
-        console.log(this.posts+"loadshi")
+    console.log(this.posts + "loadshi")
   }
   openDialog() {
 
@@ -60,8 +60,26 @@ export class PostsListComponent implements OnInit {
   //   this.router.navigate(['new'], {relativeTo: this.route});
   // }
   setUpdatedPosts() {
-console.log (this.posts +"setupdateshi")
-       this.loadPosts();
+    console.log(this.posts + "setupdateshi")
+    this.loadPosts();
+  }
+
+
+
+  filterPosts(title: string) {
+    if (title !== "") {
+      this.posts = this.filterService.filter(this.posts, title);
+    } else {
+      this.loadPosts();
+    }
+
+  }
+  newestToOldest() {
+    this.posts = this.filterService.newestToOldest(this.posts);
+  }
+
+  oldestToNewest() {
+
   }
 
 }

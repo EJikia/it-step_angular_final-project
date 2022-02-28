@@ -1,5 +1,6 @@
-<header *ngIf="isAuthenticated" class="top-nav" >
-  <!--  -->
+<ng-container *ngIf="this.loggedIn()" >
+
+<header  class="top-nav" >
       <a routerLink="/posts"
       ><img class="logo" src="/assets/img/logo.png" alt="logo"
     /></a>
@@ -13,7 +14,7 @@
     </mat-menu>
 </header>
 
-  <div *ngIf="isAuthenticated" class="navbar">
+  <div  class="navbar">
     <nav mat-tab-nav-bar >
 
       <a routerLink={{link}} mat-tab-link *ngFor="let link of links"
@@ -22,4 +23,4 @@
 
     </nav>
   </div>
-
+</ng-container>

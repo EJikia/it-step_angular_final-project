@@ -24,7 +24,7 @@ export class PostsService {
     post.userId = this.authService.userId;
     post.comments = [];
     post.reactions = [];
-    post.date = new Date()
+    post.date = new Date().toDateString();
     console.log(post);
     return this.http.post(this.postsURL, post).subscribe();
 

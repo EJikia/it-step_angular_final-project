@@ -19,7 +19,7 @@
     {
       "email": "s@d",
       "password": "$2a$10$CFanMy3p3Ku7WL1Hsm1aiuiiTL4HfQ.V1leh6SqXK8SnD1zIkjtR.",
-      "username": "sandro",
+      "username": "haha",
       "firstName": "eka",
       "lastName": "aaaaaaaa",
       "id": 3
@@ -35,63 +35,75 @@
   ],
   "posts": [
     {
-      "title": "asfagsjk",
-      "content": "jk,dsvxc",
+      "title": "fuck",
+      "content": "aaaaa",
       "userId": 3,
       "comments": [],
+      "reactions": [],
+      "date": "Mon Feb 28 2022 18:17:28 GMT+0400 (Georgia Standard Time)",
+      "id": 1
+    },
+    {
+      "title": "axali",
+      "content": "axali",
+      "userId": 3,
+      "comments": [],
+      "reactions": [],
+      "date": "Mon Feb 28 2022 18:18:42 GMT+0400 (Georgia Standard Time)",
+      "id": 2
+    },
+    {
+      "title": "uaxlesi",
+      "content": "uaxlesi",
+      "userId": 3,
+      "comments": [
+        {
+          "author": "haha",
+          "userId": 3,
+          "content": "tvaiu maw",
+          "postId": 3
+        },
+        {
+          "author": "haha",
+          "userId": 3,
+          "content": "sd",
+          "postId": 3
+        }
+      ],
       "reactions": [
         {
           "isLiked": true,
           "userId": 3
-        },
-        {
-          "isLiked": true,
-          "userId": 4
         }
       ],
-      "date": "2022-02-27T20:36:02.666Z",
-      "id": 1,
+      "date": "Mon Feb 28 2022 18:18:50 GMT+0400 (Georgia Standard Time)",
+      "id": 3,
       "user": {
         "email": "s@d",
         "password": "$2a$10$CFanMy3p3Ku7WL1Hsm1aiuiiTL4HfQ.V1leh6SqXK8SnD1zIkjtR.",
-        "username": "sandro",
+        "username": "haha",
         "firstName": "eka",
         "lastName": "aaaaaaaa",
         "id": 3
       }
     },
     {
-      "title": "ewhgbjn",
-      "content": "hjbndf",
+      "title": "eka",
+      "content": "eka",
       "userId": 3,
-      "comments": [
-        {
-          "author": "sandroaaaa",
-          "userId": 4,
-          "content": "heloo",
-          "postId": 2
-        }
-      ],
-      "reactions": [
-        {
-          "isLiked": true,
-          "userId": 3
-        },
-        {
-          "isLiked": true,
-          "userId": 4
-        }
-      ],
-      "date": "2022-02-27T20:59:38.504Z",
-      "id": 2,
-      "user": {
-        "email": "s@d",
-        "password": "$2a$10$CFanMy3p3Ku7WL1Hsm1aiuiiTL4HfQ.V1leh6SqXK8SnD1zIkjtR.",
-        "username": "sandro",
-        "firstName": "eka",
-        "lastName": "aaaaaaaa",
-        "id": 3
-      }
+      "comments": [],
+      "reactions": [],
+      "date": "Mon Feb 28 2022",
+      "id": 4
+    },
+    {
+      "title": "asas",
+      "content": "sdsd",
+      "userId": 3,
+      "comments": [],
+      "reactions": [],
+      "date": "7:29:23 PM",
+      "id": 5
     }
   ],
   "groups": [],

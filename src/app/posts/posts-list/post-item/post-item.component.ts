@@ -69,7 +69,7 @@ export class PostItemComponent implements OnInit {
 
   }
 
-  onReactionCliked(isLike: boolean) {
+  onReactionClicked(isLike: boolean) {
 
     const userId = this.authService.userId;
     const reaction = this.post.reactions?.find(i => i.userId == userId);

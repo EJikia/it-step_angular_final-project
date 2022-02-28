@@ -17,34 +17,38 @@
   <mat-card-content>
     {{ post.content }}
   </mat-card-content>
-
+  <hr />
   <mat-card-actions align="end">
-    <p>
-      comments:
-      {{
-        post.comments == null || post.comments == undefined
-          ? "0"
-          : post.comments.length
-      }}
-    </p>
+    <div class="btn_wrapper">
+      <button
+        [ngClass]="{ clicked: liked }"
+        #ref
+        mat-button
+        [disabled]="liked ? true : false"
+        (click)="onReactionClicked(true)"
+      >
+        Like {{ numOfLikes }}
+      </button>
 
-    <button
-      #ref
-      mat-button
-      [disabled]="liked ? true : false"
-      (click)="onReactionCliked(true)"
-    >
-      Like {{ numOfLikes }}
-    </button>
-
-    <button
-      #ref1
-      mat-button
-      [disabled]="liked ? false : true"
-      (click)="onReactionCliked(false)"
-    >
-      Dislike {{ numOfDislikes }}
-    </button>
+      <button
+        [ngClass]="{ clicked: !liked }"
+        #ref1
+        mat-button
+        [disabled]="liked ? false : true"
+        (click)="onReactionClicked(false)"
+      >
+        Dislike {{ numOfDislikes }}
+      </button>
+    </div>
+    <div class="comment">
+      <p>
+        comments:{{
+          post.comments == null || post.comments == undefined
+            ? "0"
+            : post.comments.length
+        }}
+      </p>
+    </div>
   </mat-card-actions>
   <div class="date">
     <p>{{ post.date }}</p>
