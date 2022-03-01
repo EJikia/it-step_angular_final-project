@@ -43,15 +43,7 @@
         placeholder="Email"
         formControlName="email"
       />
-      <span
-        class="help-block"
-        *ngIf="
-          regForm.get('email')?.hasError('emailUsed') &&
-          regForm.get('email')?.touched
-        "
-      >
-        *this email already registered</span
-      >
+
       <span
         class="help-block"
         *ngIf="regForm.get('email')?.touched && regForm.get('email')?.errors?.['required'] "
@@ -61,6 +53,15 @@
         class="help-block"
         *ngIf="regForm.get('email')?.touched && regForm.get('email')?.errors?.['email'] "
         >*email isn't valid</span
+      >
+      <span
+        class="help-block"
+        *ngIf="
+          regForm.get('email')?.hasError('emailUsed') &&
+          regForm.get('email')?.touched
+        "
+      >
+        *this email already registered</span
       >
       <input
         class="input-item"

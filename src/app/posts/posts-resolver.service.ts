@@ -5,7 +5,6 @@ import {
   RouterStateSnapshot,
   Router
 } from '@angular/router';
-import { DataStorageService } from '../services/data-storage.service';
 import { PostsService } from '../services/posts.service';
 
 @Injectable({

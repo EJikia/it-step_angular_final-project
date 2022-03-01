@@ -14,6 +14,7 @@ export class CustomValidationsService {
 validateUsernameNotTaken(control: AbstractControl) {
   return this.checkUsernameNotTaken(control.value).pipe(
     map(res => {
+      console.log(res, " dachekva usernames")
       return res ? null : { usernameTaken: true };
     })
   );
@@ -26,10 +27,12 @@ checkUsernameNotTaken(username: string) {
 
 checkEmailNotUsed(email: string){
   return this.http.get<User[]>(this.baseURL).pipe(map((emailList: Array<any>) => emailList.filter(user => user.email === email)),
-    map(users => !users.length));
+    map(users => !users.length, ) );
+
 }
 validateEmailNotUsed(control: AbstractControl) {
   return this.checkUsernameNotTaken(control.value).pipe(map(res => {
+    console.log(res, " dachekva")
     return res ? null : { emailUsed: true }
   }))
 }

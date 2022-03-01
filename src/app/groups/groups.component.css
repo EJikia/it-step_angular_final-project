@@ -17,8 +17,9 @@
 .post-wrapper{
   margin-top: 1em;
   margin-bottom: 1em;
-  background-color: rgba(60, 179, 114, 0.288);
   min-width: 150px;
+  box-shadow: -5px -2px 137px -30px rgba(149,26,253,0.64);
+  /* box-shadow: 4px 10px 5px 0px rgba(179,135,207,0.75); */
 
 
 }

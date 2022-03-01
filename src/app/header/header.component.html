@@ -1,10 +1,10 @@
-<ng-container *ngIf="this.loggedIn()" >
-
-<header  class="top-nav" >
-      <a routerLink="/posts"
+<ng-container *ngIf="this.loggedIn()">
+  <header class="top-nav">
+    <a routerLink="/posts"
       ><img class="logo" src="/assets/img/logo.png" alt="logo"
     /></a>
-    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>settings</mat-icon>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>settings</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink="/update-user-info">
@@ -12,15 +12,14 @@
       </button>
       <button mat-menu-item (click)="logout()">Log Out</button>
     </mat-menu>
-</header>
+  </header>
 
-  <div  class="navbar">
-    <nav mat-tab-nav-bar >
-
-      <a routerLink={{link}} mat-tab-link *ngFor="let link of links"
-      (click)="activeLink = link"
-      [active]="activeLink == link"> {{link}} </a>
-
-    </nav>
-  </div>
+  <nav>
+    <li class="nav-link-wrapper">
+      <a routerLink="/posts"> Posts </a>
+    </li>
+    <li class="nav-link-wrapper">
+      <a routerLink="/groups"> Groups </a>
+    </li>
+  </nav>
 </ng-container>

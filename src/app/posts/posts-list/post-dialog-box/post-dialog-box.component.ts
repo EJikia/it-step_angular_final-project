@@ -1,11 +1,7 @@
 import { Component, EventEmitter, Inject, Input, OnInit, Output, OnDestroy } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AuthService } from 'src/app/auth/auth.service';
 import { Post } from 'src/app/models/post';
-import { DataStorageService } from 'src/app/services/data-storage.service';
 import { PostsService } from 'src/app/services/posts.service';
 import { ShareDataService } from 'src/app/services/share-data.service';
 
@@ -17,8 +13,6 @@ import { ShareDataService } from 'src/app/services/share-data.service';
 })
 export class PostDialogBoxComponent implements OnInit {
 
-  //@Output() saveEventEmitter = new EventEmitter();
-
   postForm = new FormGroup({});
   @Input() isEditMode: boolean = false;
   @Input() post!: Post;
@@ -27,10 +21,7 @@ export class PostDialogBoxComponent implements OnInit {
   subscription!: any;
   constructor(
     private postsService: PostsService,
-    private authService: AuthService,
-    private dataStorageService: DataStorageService,
     private formBuilder: FormBuilder,
-    private router: Router,
     private dialogRef: MatDialogRef<any>,
     private shareDataService: ShareDataService,
     @Inject(MAT_DIALOG_DATA) public data: any

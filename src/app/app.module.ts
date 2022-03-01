@@ -19,7 +19,6 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner.component';
 import { FilterComponent } from './shared/filter/filter.component';
-import { CommentsComponent } from './comments/comments.component';
 import { GroupsComponent } from './groups/groups.component';
 import { GroupsListComponent } from './groups/groups-list/groups-list.component';
 import { GroupDialogBoxComponent } from './groups/groups-list/group-dialog-box/group-dialog-box.component';
@@ -45,7 +44,6 @@ import { PageNotFoundComponent } from './shared/page-not-found.component';
     LoadingSpinnerComponent,
     FilterComponent,
     PostEditComponent,
-    CommentsComponent,
     GroupsComponent,
     GroupsListComponent,
     GroupDialogBoxComponent,

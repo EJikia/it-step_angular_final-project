@@ -1,19 +1,19 @@
 .container {
   width: 80%;
   margin: 0 auto;
-
+  box-shadow: -5px -2px 137px -65px rgba(149,26,253,0.64);
 }
 .post-wrapper{
   margin-top: 2em;
   margin-bottom: 1em;
+  box-shadow: -5px -2px 137px -65px rgba(149,26,253,0.64);
 }
 .mat-form-field {
   width: 100%;
 }
 
 .comment {
-    background-color: rgba(111, 173, 139, 0.623);
-  border-radius: 10px;
+  background-color: #5b24bb10;
   padding-left: 10px;
   padding-right: 10px;
 }

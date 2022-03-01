@@ -24,8 +24,15 @@ export class PostsService {
     post.userId = this.authService.userId;
     post.comments = [];
     post.reactions = [];
-    post.date = new Date().toDateString();
-    console.log(post);
+    post.date = new Date().toLocaleString('en-US', {
+      weekday: 'short',
+      day: 'numeric',
+      year: 'numeric',
+      month: 'long',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+    });
     return this.http.post(this.postsURL, post).subscribe();
 
   }
@@ -33,11 +40,10 @@ export class PostsService {
   deletePost(id: number) {
     this.http.delete(`${this.postsURL}/${id}`).subscribe();
   }
-  // id: number, title: string, content: string
+
   updatePost(post: Post) {
     return this.http.patch(`${this.postsURL}/${post.id}`, post).subscribe(data => {
-      console.log(data)
-    })
+  })
 
   }
   getPost(id: number) {

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
-import { User } from '../models/user';
+import { CustomValidationsService } from '../services/custom-validations.service';
+
 
 @Component({
   selector: 'app-settings-page',
@@ -14,13 +15,13 @@ export class SettingsPageComponent implements OnInit {
   email!: string;
   firstName!: string;
   lastName!: string;
-
+  resetClicked=false;
   userInfoForm = new FormGroup({});
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
+  constructor(private customValidatorsService: CustomValidationsService,private authService: AuthService, private formBuilder: FormBuilder) {
     this.userInfoForm = formBuilder.group({
-      email: new FormControl('', Validators.required),
-      username: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email], this.customValidatorsService.validateEmailNotUsed.bind(this.customValidatorsService)),
+      username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(24)], this.customValidatorsService.validateUsernameNotTaken.bind(this.customValidatorsService)),
       firstname: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
 
@@ -64,6 +65,8 @@ export class SettingsPageComponent implements OnInit {
   }
 
   onReset(){
+    this.resetClicked=true;
+    console.log(this.resetClicked)
     this.userInfoForm.setValue({
       email: this.email,
       username: this.username,
@@ -71,6 +74,8 @@ export class SettingsPageComponent implements OnInit {
       lastname: this.lastName
 
     })
+
+
 
 
   }

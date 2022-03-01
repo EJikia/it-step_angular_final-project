@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
   { path: 'posts/:id', component: PostDetailComponent, resolve: {post: PostsResolverService}, canActivate: [AuthGuard] },
   { path: 'posts/:id/edit',  component: PostDialogBoxComponent,resolve: [PostsResolverService], canActivate: [AuthGuard]},
-  { path: 'posts/createGroup', component:GroupDialogBoxComponent,canActivate: [AuthGuard] },
+  // { path: 'posts/createGroup', component:GroupDialogBoxComponent,canActivate: [AuthGuard] },
   { path: '**', component: PageNotFoundComponent },
 
 ];

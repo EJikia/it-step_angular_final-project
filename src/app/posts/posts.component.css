@@ -4,6 +4,16 @@ main{
 }
 .posts {
   width: 70%;
-  margin: 0 auto;
+
 }
 
+@media only screen and (max-width:1279px) {
+  .posts{
+    width:80%;
+  }
+}
+
+.groups {
+  width: 20%;
+  height: 100%;
+}

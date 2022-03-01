@@ -35,7 +35,7 @@ export class AuthService {
   signInURL = "http://localhost:3000/signin";
   constructor(private http: HttpClient, private router: Router) {
     let user = localStorage.getItem('user');
-    if(user != null){
+    if (user != null) {
       const userData = JSON.parse(user);
       this.userId = userData.id;
       this.username = userData.username;
@@ -149,7 +149,6 @@ export class AuthService {
     localStorage.setItem('token', JSON.stringify(user.accessToken))
     localStorage.setItem('user', JSON.stringify(user))
 
-
   }
   updateUser(id: number, email: string, username: string, firstName: string, lastName: string,) {
     console.log("shemovida", firstName)
@@ -163,7 +162,7 @@ export class AuthService {
         this.username = resData.username,
         this.firstName = resData.firstName,
         this.lastName = resData.lastName,
-        console.log(this.email, this.firstName)
+        alert("Updated sucessfully")
 
     })
   }

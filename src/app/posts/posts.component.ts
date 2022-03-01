@@ -1,6 +1,4 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { Post } from '../models/post';
-import { DataStorageService } from '../services/data-storage.service';
 import { PostsService } from '../services/posts.service';
 
 @Component({
@@ -10,7 +8,7 @@ import { PostsService } from '../services/posts.service';
 })
 export class PostsComponent implements OnInit {
 
-  constructor(private dataStorageService: DataStorageService, private postsService: PostsService) { }
+  constructor( private postsService: PostsService) { }
 
   ngOnInit(): void {
 

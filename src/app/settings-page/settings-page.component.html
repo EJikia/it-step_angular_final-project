@@ -34,6 +34,23 @@
         name="username"
         formControlName="username"
       />
+      <p class="help-block" *ngIf="userInfoForm.get('username')?.errors?.['maxlength'] || userInfoForm.get('username')?.errors?.['minlength'] && userInfoForm.get('username')?.touched"
+      > *username must contain min. 3 and max. 24 characters</p
+      >
+      <p
+        class="help-block"
+        *ngIf="userInfoForm.get('username')?.errors?.['required'] && userInfoForm.get('username')?.touched"
+        >*username is required!</p
+      >
+      <p
+        class="help-block"
+        *ngIf="
+        userInfoForm.get('username')?.hasError('usernameTaken') &&
+        userInfoForm.get('username')?.touched && !resetClicked
+        "
+      >
+        *this username already exist</p
+      >
 
       <label class="userInfo-form-item userInfo-label" for="email">Email</label>
       <input
@@ -43,10 +60,29 @@
         name="email"
         formControlName="email"
       />
+      <p
+      class="help-block"
+      *ngIf="
+        userInfoForm.get('email')?.hasError('emailUsed') &&
+        userInfoForm.get('email')?.touched && !resetClicked
+      "
+    >
+      *this email already registered</p
+    >
+    <p
+      class="help-block"
+      *ngIf="userInfoForm.get('email')?.touched && userInfoForm.get('email')?.errors?.['required'] "
+      >*email is required!</p
+    >
+    <p
+      class="help-block"
+      *ngIf="userInfoForm.get('email')?.touched && userInfoForm.get('email')?.errors?.['email'] "
+      >*email isn't valid</p
+    >
     </div>
     <div class="userInfo-update-btn">
       <button id="resetUserInfo" type="button" (click)="loadUserData()">Reset</button>
-      <button id="saveUpdatedUserInfo" type="submit" >Save</button>
+      <button id="saveUpdatedUserInfo" type="submit"  >Save</button>
     </div>
   </form>
 </div>

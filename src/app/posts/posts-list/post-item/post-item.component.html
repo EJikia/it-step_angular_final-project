@@ -1,5 +1,5 @@
 <mat-card class="post-wrapper">
-  <mat-card-actions align="end" class="edit_btn">
+  <mat-card-actions align="end" class="edit_btn" *ngIf="userId==post.userId">
     <button mat-button [matMenuTriggerFor]="edit" class="edit">
       <mat-icon>edit</mat-icon>
     </button>

@@ -31,16 +31,22 @@ export class LoginComponent implements OnInit {
 
     this.isLoading = true;
     this.authService.signIn(email, password).subscribe(resData => {
-      console.log("hi"+resData)
       this.isLoading = false;
+
+      alert("signed sucessfully")
       this.router.navigate(["/posts"])
+
     },
       errorMessage => {
         this.error = errorMessage;
         this.isLoading = false;
       });
+
     this.loginForm.reset()
 
   }
+
+
+
 
 }
