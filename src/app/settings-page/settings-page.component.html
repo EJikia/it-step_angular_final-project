@@ -46,7 +46,7 @@
         class="help-block"
         *ngIf="
         userInfoForm.get('username')?.hasError('usernameTaken') &&
-        userInfoForm.get('username')?.touched && !resetClicked
+        userInfoForm.get('username')?.touched && !resetClicked && userInfoForm.get('username')?.value !== username
         "
       >
         *this username already exist</p
@@ -64,7 +64,7 @@
       class="help-block"
       *ngIf="
         userInfoForm.get('email')?.hasError('emailUsed') &&
-        userInfoForm.get('email')?.touched && !resetClicked
+        userInfoForm.get('email')?.touched && !resetClicked && userInfoForm.get('email')?.value !== email
       "
     >
       *this email already registered</p

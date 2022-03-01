@@ -1,22 +1,47 @@
 <div class="container">
-  <mat-card class="post-wrapper">
+
+  <form #editForm="ngForm" (ngSubmit)="onSave(editForm)" class="post-wrapper">
     <mat-card-actions align="end" class="edit_btn">
-      <button mat-button [matMenuTriggerFor]="edit" class="edit">
+      <button type="button" mat-button [matMenuTriggerFor]="edit" class="edit">
         <mat-icon>edit</mat-icon>
       </button>
     </mat-card-actions>
     <mat-menu #edit="matMenu">
-      <button mat-menu-item>Edit</button>
-      <button mat-menu-item>Delete</button>
+      <button mat-menu-item type="button" (click)="onEdit()">Edit</button>
+      <button mat-menu-item type="button" (click)="onDelete()">Delete</button>
     </mat-menu>
-    <mat-card-title> {{ post.title }} </mat-card-title>
-    <mat-card-subtitle>
-      <h2>{{ post.user?.username }}</h2>
-    </mat-card-subtitle>
-    <mat-card-content>
-      <p>{{ post.content }}</p>
-    </mat-card-content>
-  </mat-card>
+    <p>{{post.user?.username}}</p>
+    <input
+      [readonly]="!isEditMode"
+      mat-input
+      type="text"
+      [ngModel]="post.title"
+      required
+      id="title"
+      name="title"
+      #postTitle
+    />
+    <textarea
+      [readonly]="!isEditMode"
+      mat-input
+      type="text"
+      id="content"
+      required
+      name="content"
+      [ngModel]="post.content"
+      #postContent
+    ></textarea>
+    <ng-container *ngIf="isEditMode">
+      <button mat-button type="submit">Save</button>
+      <button
+        mat-button
+        type="button"
+        (click)="onCancel(postContent, postTitle)"
+      >
+        Cancel
+      </button>
+    </ng-container>
+  </form>
   <div class="comments">
     <form
       class="comment_form"
@@ -30,13 +55,15 @@
           placeholder="Leave a comment..."
           formControlName="content"
         ></textarea>
-        <button mat-button type="submit" [disabled]="!commentForm.valid">add comment</button>
+        <button mat-button type="submit" [disabled]="!commentForm.valid">
+          add comment
+        </button>
       </mat-form-field>
     </form>
 
     <div *ngFor="let comment of post.comments" class="comment">
-      <h3 class="comment_author">{{comment.author}}</h3>
-      <p class="comment_content"> {{comment.content}}</p>
+      <h3 class="comment_author">{{ comment.author }}</h3>
+      <p class="comment_content">{{ comment.content }}</p>
     </div>
   </div>
 </div>

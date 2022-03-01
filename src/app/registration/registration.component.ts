@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { CustomValidationsService } from '../services/custom-validations.service';
 import { ConfirmPasswordValidator } from './passwords.validator';
-
+import * as alertyfy from 'alertifyjs';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -25,7 +25,7 @@ export class RegistrationComponent implements OnInit {
       lastName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(24)]),
       password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]),
       rePassword: new FormControl('', Validators.required),
-      checkbox: new FormControl('', Validators.required)
+      checkbox: new FormControl(false, Validators.requiredTrue)
     },
       {
         validator: ConfirmPasswordValidator("password", "rePassword")
@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
     this.isLoading = true;
 
     this.authService.signUp(username, email, firstName, lastName, password).subscribe(resData => {
-      alert("User registered successfully!"),
+    alertyfy.success('You are successfully registered');
       console.log(resData);
       this.isLoading = false;
       this.router.navigate(["/login"])

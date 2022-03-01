@@ -1,5 +1,5 @@
 <div class="auth-page_container">
-  <div class="auth-page_left">
+  <div *ngIf="!isLoading" class="auth-page_left">
     <img src="/assets/img/logo.png" />
     <h1>Zazamtro</h1>
   </div>
@@ -7,7 +7,7 @@
     <div class="spinner" *ngIf="isLoading">
       <mat-spinner></mat-spinner>
     </div>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+    <form *ngIf="!isLoading" [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
       <h2>Sign In</h2>
       <span class="help-block" *ngIf="error">
         {{ error }}

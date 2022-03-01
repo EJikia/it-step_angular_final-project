@@ -4,6 +4,7 @@ import { Post } from '../models/post';
 import { Comment } from '../models/comment';
 import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
+import * as alertyfy from 'alertifyjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -33,12 +34,15 @@ export class PostsService {
       minute: 'numeric',
       second: 'numeric',
     });
-    return this.http.post(this.postsURL, post).subscribe();
-
+    return this.http.post(this.postsURL, post).subscribe(res => {
+      alertyfy.success('successfully added');
+    });
   }
 
   deletePost(id: number) {
-    this.http.delete(`${this.postsURL}/${id}`).subscribe();
+    return this.http.delete(`${this.postsURL}/${id}`).subscribe(res => {
+      alertyfy.success('successfully deleted');
+    });
   }
 
   updatePost(post: Post) {
@@ -47,7 +51,7 @@ export class PostsService {
 
   }
   getPost(id: number) {
-    return this.http.get<Post>(`${this.postsURL}/${id}`)
+    return this.http.get<Post>(`${this.postsURL}/${id}?_expand=user`)
   }
   getComments() {
     return this.http.get(this.commentsURL);

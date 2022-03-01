@@ -12,20 +12,20 @@ import { PostsResolverService } from './posts/posts-resolver.service';
 import { PostsComponent } from './posts/posts.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
+import { LoggedInGuard } from './shared/logged-in.guard';
 import { PageNotFoundComponent } from './shared/page-not-found.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/posts', pathMatch: "full" },
-  { path: 'registration', component: RegistrationComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'registration', component: RegistrationComponent, canActivate: [LoggedInGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [LoggedInGuard]},
   { path: 'groups', component: GroupsComponent,canActivate: [AuthGuard] },
   { path: 'groups/:id', component: GroupDetailComponent, canActivate: [AuthGuard]},
   { path: 'update-user-info', component: SettingsPageComponent, canActivate: [AuthGuard] },
   { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
   { path: 'posts/:id', component: PostDetailComponent, resolve: {post: PostsResolverService}, canActivate: [AuthGuard] },
   { path: 'posts/:id/edit',  component: PostDialogBoxComponent,resolve: [PostsResolverService], canActivate: [AuthGuard]},
-  // { path: 'posts/createGroup', component:GroupDialogBoxComponent,canActivate: [AuthGuard] },
   { path: '**', component: PageNotFoundComponent },
 
 ];

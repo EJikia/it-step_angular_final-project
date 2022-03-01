@@ -1,17 +1,22 @@
-<div class="auth-page_container">
+<div *ngIf="!isLoading" class="auth-page_container">
   <div class="auth-page_left">
     <img src="/assets/img/logo.png" />
     <h1>Zazamtro</h1>
   </div>
   <div class="auth-page_right">
-       <div class="spinner" *ngIf='isLoading'>
-      <!-- <mat-spinner></mat-spinner> -->
+    <div class="spinner" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
     </div>
-    <form [formGroup]="regForm" (ngSubmit)="onSubmit()" class="form" *ngIf='!isLoading'>
+    <form
+      [formGroup]="regForm"
+      (ngSubmit)="onSubmit()"
+      class="form"
+      *ngIf="!isLoading"
+    >
       <h2>Sign Up</h2>
       <span class="help-block" *ngIf="error">
-        {{error}}
-        </span>
+        {{ error }}
+      </span>
       <input
         class="input-item"
         type="text"
@@ -140,7 +145,7 @@
       <button type="submit" [disabled]="!regForm.valid">Submit</button>
       <p>
         Already Registered?
-        <a routerLink="/login" > Sign In</a>
+        <a routerLink="/login"> Sign In</a>
       </p>
     </form>
   </div>

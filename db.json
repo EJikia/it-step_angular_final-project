@@ -39,95 +39,57 @@
       "firstName": "eka",
       "lastName": "jikia",
       "id": 5
+    },
+    {
+      "email": "eka@eka",
+      "password": "$2a$10$kSzGNAtnF6JbN0lH2eNDJ.CWzpEf2uS/DOW78YUPs9Ntb9u/Jclhy",
+      "username": "ekajikia",
+      "firstName": "eka",
+      "lastName": "eka",
+      "id": 6
+    },
+    {
+      "email": "e@a",
+      "password": "$2a$10$ugb0J2c4R7DBvQVSDqfNKOm4iRKvRyXBDIT7kQPB7YIXlLqyLt5vu",
+      "username": "axali",
+      "firstName": "sandro",
+      "lastName": "sandro",
+      "id": 7
+    },
+    {
+      "email": "f@f",
+      "password": "$2a$10$Jf9eIFKBeo4.Bugljmj4LObLjBE4hKIJf0L3GG1ZAOYJprdCXaUjG",
+      "username": "DAVScxf",
+      "firstName": "dsgvs",
+      "lastName": "dvss",
+      "id": 8
+    },
+    {
+      "email": "eka@e",
+      "password": "$2a$10$j4.5158RXjrK9HvPYNPqTOi5QV0LFJny8Wk7obNz5RPt0ME4TgHQW",
+      "username": "eka",
+      "firstName": "eka",
+      "lastName": "eka",
+      "id": 9
+    },
+    {
+      "email": "r@e",
+      "password": "$2a$10$W0j2M5GP6NMxRgsQvgHwx.z9XXDEf3EQp9Zfynyg2esZg31rmi3a.",
+      "username": "registracia",
+      "firstName": "era",
+      "lastName": "eka",
+      "id": 10
     }
   ],
   "posts": [
     {
-      "title": "uaxlesis shemdegi",
-      "content": "daeditebuli",
-      "userId": 5,
-      "comments": [
-        {
-          "author": "ekaterine18",
-          "userId": 5,
-          "content": "comentaro",
-          "postId": 4
-        },
-        {
-          "author": "ekaterine18",
-          "userId": 5,
-          "content": "meore",
-          "postId": 4
-        },
-        {
-          "author": "ekaterine18",
-          "userId": 5,
-          "content": "tak taaak",
-          "postId": 4
-        }
-      ],
-      "reactions": [
-        {
-          "isLiked": false,
-          "userId": 5
-        },
-        {
-          "isLiked": true,
-          "userId": 3
-        }
-      ],
-      "date": "Tue, March 1, 2022, 12:01:33 AM",
-      "id": 4,
-      "user": {
-        "email": "e@e",
-        "password": "$2a$10$9GISsivn3tiWx3Bg168e7O.Lo1o7OHRLNX5YYwhdGsFTYH7zHYHiG",
-        "username": "ekateri",
-        "firstName": "eka",
-        "lastName": "jikia",
-        "id": 5
-      }
-    },
-    {
-      "title": "uaxlesis shemdegie shemdegi",
-      "content": "esec editi",
-      "userId": 5,
-      "comments": [
-        {
-          "author": "haha",
-          "userId": 3,
-          "content": "komentari",
-          "postId": 5
-        }
-      ],
-      "reactions": [
-        {
-          "isLiked": true,
-          "userId": 5
-        },
-        {
-          "isLiked": true,
-          "userId": 3
-        }
-      ],
-      "date": "Tue, March 1, 2022, 12:14:33 AM",
-      "id": 5,
-      "user": {
-        "email": "e@e",
-        "password": "$2a$10$9GISsivn3tiWx3Bg168e7O.Lo1o7OHRLNX5YYwhdGsFTYH7zHYHiG",
-        "username": "ekateri",
-        "firstName": "eka",
-        "lastName": "jikia",
-        "id": 5
-      }
-    },
-    {
-      "title": "axali",
-      "content": "posti",
-      "userId": 5,
+      "title": "efka",
+      "content": "efsf",
+      "userId": 3,
       "comments": [],
       "reactions": [],
-      "date": "Tue, March 1, 2022, 3:00:06 AM",
-      "id": 6
+      "date": "Tue, March 1, 2022, 11:44:44 PM",
+      "id": 1
     }
   ],
   "groups": [],
