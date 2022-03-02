@@ -45,7 +45,6 @@ export class PostDialogBoxComponent implements OnInit {
     } else {
       this.subscription = this.shareDataService.getData().subscribe((res: boolean) => {
         this.isEditMode = res;
-        console.log(this.isEditMode)
       })
 
       if (this.isEditMode) {
@@ -58,9 +57,7 @@ export class PostDialogBoxComponent implements OnInit {
   }
 
   onAddPost() {
-    console.log('forma');
     if (!this.postForm.valid) {
-      console.log("shemovida invalid")
       return
 
     } else {
@@ -74,8 +71,6 @@ export class PostDialogBoxComponent implements OnInit {
 
   }
   onEditPost() {
-    console.log('edit');
-
       const id: any = this.data.id
       const title = this.postForm.value.title;
       const content = this.postForm.value.content;
@@ -88,14 +83,6 @@ export class PostDialogBoxComponent implements OnInit {
       this.isEditMode = false;
       this.checkEditMode()
       this.dialogRef.close(post);
-      // this.router.navigate(["posts"]).then(() => {
-      //   window.location.reload();
-      // });
-
-    // const author = this.authService.username;
-    // const post = new Post(title, content, author)
-    // this.postsService.addPost(post);
-    // this.dataStorageService.storePosts()
   }
   closeDialog() {
     this.isEditMode = false;
@@ -106,7 +93,6 @@ export class PostDialogBoxComponent implements OnInit {
 
   submitForm() {
     if (this.isEditMode) {
-      console.log("hi")
       this.onEditPost();
     }
     else {

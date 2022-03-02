@@ -46,7 +46,6 @@ export class RegistrationComponent implements OnInit {
 
     this.authService.signUp(username, email, firstName, lastName, password).subscribe(resData => {
     alertyfy.success('You are successfully registered');
-      console.log(resData);
       this.isLoading = false;
       this.router.navigate(["/login"])
     },

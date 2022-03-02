@@ -1,12 +1,12 @@
 
 <div class="group_actions">
   <mat-action-list class="actions">
-    <button mat-list-item (click)="openDialog()" routerLink="createGroup"> create group </button>
+    <button mat-list-item (click)="openDialog()"> create group </button>
     <button routerLink="/groups" mat-list-item > search group </button>
   </mat-action-list>
 
   <mat-list class="list">
    <h3> My Groups</h3>
-    <a mat-list-item routerLink="/groups/:id" *ngFor="let link of links"> {{ link }} </a>
+    <a mat-list-item [routerLink]="['/groups/', group.id]"*ngFor="let group of myGroups"> {{ group.title }} </a>
   </mat-list>
 </div>

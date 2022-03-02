@@ -1,47 +1,76 @@
 <div class="container">
+  <mat-card>
+    <form #editForm="ngForm" (ngSubmit)="onSave(editForm)" class="post-wrapper">
+      <mat-card-actions align="end" class="edit_btn" *ngIf="userId==post.userId">
+        <button
+          type="button"
+          mat-button
+          [matMenuTriggerFor]="edit"
+          class="edit"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </mat-card-actions>
+      <mat-menu #edit="matMenu">
+        <button mat-menu-item type="button" (click)="onEdit()">Edit</button>
+        <button mat-menu-item type="button" (click)="onDelete()">Delete</button>
+      </mat-menu>
+      <h3 class="username">{{ post.user?.username }}</h3>
+      <input
+        [readonly]="!isEditMode"
+        mat-input
+        type="text"
+        [ngModel]="post.title"
+        required
+        id="title"
+        name="title"
+        #postTitle
+        style="font-size: 20px;"
+      />
+      <textarea
+        [readonly]="!isEditMode"
+        mat-input
+        type="text"
+        id="content"
+        required
+        name="content"
+        [ngModel]="post.content"
+        #postContent
+      ></textarea>
+      <ng-container *ngIf="isEditMode">
+        <button mat-button type="submit">Save</button>
+        <button
+          mat-button
+          type="button"
+          (click)="onCancel(postContent, postTitle)"
+        >
+          Cancel
+        </button>
+      </ng-container>
+    </form>
+    <hr>
+    <mat-card-actions align="end">
+      <div class="btn_wrapper">
+        <button
+          #ref
+          mat-button
+          [disabled]="liked ? true : liked == null ? false : false"
+          (click)="onReactionClicked(true)"
+        >
+          Like {{ numOfLikes }}
+        </button>
 
-  <form #editForm="ngForm" (ngSubmit)="onSave(editForm)" class="post-wrapper">
-    <mat-card-actions align="end" class="edit_btn">
-      <button type="button" mat-button [matMenuTriggerFor]="edit" class="edit">
-        <mat-icon>edit</mat-icon>
-      </button>
+        <button
+          #ref1
+          mat-button
+          [disabled]="liked ? false : liked == null ? false : true"
+          (click)="onReactionClicked(false)"
+        >
+          Dislike {{ numOfDislikes }}
+        </button>
+      </div>
     </mat-card-actions>
-    <mat-menu #edit="matMenu">
-      <button mat-menu-item type="button" (click)="onEdit()">Edit</button>
-      <button mat-menu-item type="button" (click)="onDelete()">Delete</button>
-    </mat-menu>
-    <p>{{post.user?.username}}</p>
-    <input
-      [readonly]="!isEditMode"
-      mat-input
-      type="text"
-      [ngModel]="post.title"
-      required
-      id="title"
-      name="title"
-      #postTitle
-    />
-    <textarea
-      [readonly]="!isEditMode"
-      mat-input
-      type="text"
-      id="content"
-      required
-      name="content"
-      [ngModel]="post.content"
-      #postContent
-    ></textarea>
-    <ng-container *ngIf="isEditMode">
-      <button mat-button type="submit">Save</button>
-      <button
-        mat-button
-        type="button"
-        (click)="onCancel(postContent, postTitle)"
-      >
-        Cancel
-      </button>
-    </ng-container>
-  </form>
+  </mat-card>
   <div class="comments">
     <form
       class="comment_form"
@@ -61,6 +90,13 @@
       </mat-form-field>
     </form>
 
+    <span class="comment_wrapper"
+      >comments:{{
+        post.comments == null || post.comments == undefined
+          ? "0"
+          : post.comments.length
+      }}</span
+    >
     <div *ngFor="let comment of post.comments" class="comment">
       <h3 class="comment_author">{{ comment.author }}</h3>
       <p class="comment_content">{{ comment.content }}</p>

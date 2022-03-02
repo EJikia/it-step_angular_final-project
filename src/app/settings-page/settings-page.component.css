@@ -29,22 +29,15 @@
 
 button {
   cursor: pointer;
-  color: black;
-  background-color:#5b24bb3f;
-  padding: 10px;
-  margin-left: 10px;
-  border-radius: 10px;
-  border: none;
-  margin-top: 5px;
+  color: white;
+  background-color:#673ab7;
+  margin: 5px;
+
 }
 button:hover {
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
-button:disabled{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
+
 .help-block{
   color: red;
 }

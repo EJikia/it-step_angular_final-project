@@ -1,97 +1,250 @@
 {
   "users": [
     {
-      "email": "kako@yachagi",
-      "password": "$2a$10$RPw4vEwgURojeiNm/clDM.Fke1Ag8wo/qiCRago0T7TgU9Tp102bK",
-      "username": "ekaterine",
-      "firstName": "vaaxraa",
-      "lastName": "e",
+      "email": "test@test",
+      "password": "$2a$10$IZD3oc.IXRz9R4eUyuJSQOMygq1DLv7memr36lA3Jcxkfj.KeqLJe",
+      "username": "test",
+      "firstName": "eka",
+      "lastName": "jikia",
       "id": 1
     },
     {
-      "email": "test@test",
-      "password": "$2a$10$CxVYooMGKyL.sfIgGJgCHupvKZ9tMKheH6TEZ25QcY6esV1HErKxq",
-      "username": "test",
-      "firstName": "test",
-      "lastName": "test",
+      "email": "a@a",
+      "password": "$2a$10$WmW4detZcz9BUBGzzktV3eUiyx9vYSe1Y5DXQ6VNWy7nGljJaz8NK",
+      "username": "username1",
+      "firstName": "eka",
+      "lastName": "jikia",
       "id": 2
     },
     {
-      "email": "s@d",
-      "password": "$2a$10$CFanMy3p3Ku7WL1Hsm1aiuiiTL4HfQ.V1leh6SqXK8SnD1zIkjtR.",
-      "username": "haha",
+      "email": "b@b",
+      "password": "$2a$10$9TkcuRUeE7o2I./Ll2VDdu75NS6op8QWH58l1s6DVQEXrNPTvoMmm",
+      "username": "user3",
       "firstName": "eka",
-      "lastName": "aaaaaaaa",
+      "lastName": "jikia",
       "id": 3
     },
     {
-      "email": "e@e",
-      "password": "$2a$10$MLsGyeeWQKNEaCDwLzX6Suq.moyT.Ef/SNOxNsbAw8mZGsw3o/eIy",
-      "username": "sandroaaaa",
+      "email": "c@c",
+      "password": "$2a$10$myoNYrM.S0YSYNhXA/2I4eb8k.qwv64R9TxDkCpjzZf9QqgOl/ljS",
+      "username": "user4",
       "firstName": "eka",
-      "lastName": "sdk",
+      "lastName": "jikia",
       "id": 4
     },
     {
-      "email": "e@e",
-      "password": "$2a$10$9GISsivn3tiWx3Bg168e7O.Lo1o7OHRLNX5YYwhdGsFTYH7zHYHiG",
-      "username": "ekateri",
-      "firstName": "eka",
-      "lastName": "jikia",
+      "email": "axali@useri",
+      "password": "$2a$10$L3GdwZ0GckqLxJmNt2Q/Lugb/mGFNNUC1z1.Le5RydKevu5V29rdu",
+      "username": "axaliuseri",
+      "firstName": "axali",
+      "lastName": "useri",
       "id": 5
-    },
-    {
-      "email": "eka@eka",
-      "password": "$2a$10$kSzGNAtnF6JbN0lH2eNDJ.CWzpEf2uS/DOW78YUPs9Ntb9u/Jclhy",
-      "username": "ekajikia",
-      "firstName": "eka",
-      "lastName": "eka",
-      "id": 6
-    },
-    {
-      "email": "e@a",
-      "password": "$2a$10$ugb0J2c4R7DBvQVSDqfNKOm4iRKvRyXBDIT7kQPB7YIXlLqyLt5vu",
-      "username": "axali",
-      "firstName": "sandro",
-      "lastName": "sandro",
-      "id": 7
-    },
-    {
-      "email": "f@f",
-      "password": "$2a$10$Jf9eIFKBeo4.Bugljmj4LObLjBE4hKIJf0L3GG1ZAOYJprdCXaUjG",
-      "username": "DAVScxf",
-      "firstName": "dsgvs",
-      "lastName": "dvss",
-      "id": 8
-    },
-    {
-      "email": "eka@e",
-      "password": "$2a$10$j4.5158RXjrK9HvPYNPqTOi5QV0LFJny8Wk7obNz5RPt0ME4TgHQW",
-      "username": "eka",
-      "firstName": "eka",
-      "lastName": "eka",
-      "id": 9
-    },
-    {
-      "email": "r@e",
-      "password": "$2a$10$W0j2M5GP6NMxRgsQvgHwx.z9XXDEf3EQp9Zfynyg2esZg31rmi3a.",
-      "username": "registracia",
-      "firstName": "era",
-      "lastName": "eka",
-      "id": 10
     }
   ],
   "posts": [
     {
-      "title": "efka",
-      "content": "efsf",
-      "userId": 3,
+      "title": "Title",
+      "content": "content",
+      "userId": 1,
+      "comments": [
+        {
+          "author": "test",
+          "userId": 1,
+          "content": "comment",
+          "postId": 1
+        },
+        {
+          "author": "username",
+          "userId": 2,
+          "content": "comment",
+          "postId": 1
+        }
+      ],
+      "reactions": [
+        {
+          "isLiked": true,
+          "userId": 1
+        },
+        {
+          "isLiked": true,
+          "userId": 2
+        },
+        {
+          "isLiked": true,
+          "userId": 3
+        },
+        {
+          "isLiked": false,
+          "userId": 4
+        },
+        {
+          "isLiked": true,
+          "userId": 5
+        }
+      ],
+      "date": "Wed, March 2, 2022, 3:08:34 PM",
+      "id": 1,
+      "user": {
+        "email": "test@test",
+        "password": "$2a$10$IZD3oc.IXRz9R4eUyuJSQOMygq1DLv7memr36lA3Jcxkfj.KeqLJe",
+        "username": "test",
+        "firstName": "eka",
+        "lastName": "jikia",
+        "id": 1
+      }
+    },
+    {
+      "title": "title1",
+      "content": "content",
+      "userId": 2,
       "comments": [],
-      "reactions": [],
-      "date": "Tue, March 1, 2022, 11:44:44 PM",
-      "id": 1
+      "reactions": [
+        {
+          "isLiked": true,
+          "userId": 3
+        },
+        {
+          "isLiked": true,
+          "userId": 4
+        },
+        {
+          "isLiked": true,
+          "userId": 5
+        }
+      ],
+      "date": "Wed, March 2, 2022, 3:29:00 PM",
+      "id": 2,
+      "user": {
+        "email": "a@a",
+        "password": "$2a$10$WmW4detZcz9BUBGzzktV3eUiyx9vYSe1Y5DXQ6VNWy7nGljJaz8NK",
+        "username": "username1",
+        "firstName": "eka",
+        "lastName": "jikia",
+        "id": 2
+      }
+    },
+    {
+      "title": "posti",
+      "content": "posti",
+      "userId": 4,
+      "comments": [
+        {
+          "author": "user4",
+          "userId": 4,
+          "content": "comment",
+          "postId": 3
+        }
+      ],
+      "reactions": [
+        {
+          "isLiked": true,
+          "userId": 4
+        },
+        {
+          "isLiked": true,
+          "userId": 5
+        }
+      ],
+      "date": "Wed, March 2, 2022, 4:40:04 PM",
+      "id": 3,
+      "user": {
+        "email": "c@c",
+        "password": "$2a$10$myoNYrM.S0YSYNhXA/2I4eb8k.qwv64R9TxDkCpjzZf9QqgOl/ljS",
+        "username": "user4",
+        "firstName": "eka",
+        "lastName": "jikia",
+        "id": 4
+      }
+    },
+    {
+      "title": "posti",
+      "content": "posti",
+      "userId": 5,
+      "comments": [],
+      "reactions": [
+        {
+          "isLiked": true,
+          "userId": 5
+        }
+      ],
+      "date": "Wed, March 2, 2022, 5:00:43 PM",
+      "id": 4,
+      "user": {
+        "email": "axali@useri",
+        "password": "$2a$10$L3GdwZ0GckqLxJmNt2Q/Lugb/mGFNNUC1z1.Le5RydKevu5V29rdu",
+        "username": "axaliuseri",
+        "firstName": "axali",
+        "lastName": "useri",
+        "id": 5
+      }
     }
   ],
-  "groups": [],
-  "comments": []
+  "groups": [
+    {
+      "title": "group",
+      "members": [
+        {
+          "email": "a@a",
+          "firstName": "eka",
+          "lastName": "jikia",
+          "username": "username",
+          "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYSIsImlhdCI6MTY0NjIyMDM0NSwiZXhwIjoxNjQ2MjIzOTQ1LCJzdWIiOiIyIn0.QW7Ch1IkBkRtZY_WUgGHnIIRGDl7pWx37HHQIY69Ol0",
+          "id": 2
+        },
+        {
+          "email": "b@b",
+          "firstName": "eka",
+          "lastName": "jikia",
+          "username": "user3",
+          "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJAYiIsImlhdCI6MTY0NjIyMTMwNiwiZXhwIjoxNjQ2MjI0OTA2LCJzdWIiOiIzIn0.uwQ1nSGLxauOJbyDzPSP9q3CoMWGEsNCyuIdpREMf6M",
+          "id": 3
+        }
+      ],
+      "userId": 1,
+      "id": 1,
+      "user": {
+        "email": "test@test",
+        "password": "$2a$10$IZD3oc.IXRz9R4eUyuJSQOMygq1DLv7memr36lA3Jcxkfj.KeqLJe",
+        "username": "test",
+        "firstName": "eka",
+        "lastName": "jikia",
+        "id": 1
+      }
+    },
+    {
+      "title": "group1",
+      "members": [
+        {
+          "email": "axali@useri",
+          "firstName": "axali",
+          "lastName": "useri",
+          "username": "axaliuseri",
+          "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF4YWxpQHVzZXJpIiwiaWF0IjoxNjQ2MjI1MzcxLCJleHAiOjE2NDYyMjg5NzEsInN1YiI6IjUifQ.cE_IA6wECfEGmqKbyq5AknvEdCMGGZVgHPnAIGgUi50",
+          "id": 5
+        }
+      ],
+      "userId": 2,
+      "id": 2,
+      "user": {
+        "email": "a@a",
+        "password": "$2a$10$WmW4detZcz9BUBGzzktV3eUiyx9vYSe1Y5DXQ6VNWy7nGljJaz8NK",
+        "username": "username1",
+        "firstName": "eka",
+        "lastName": "jikia",
+        "id": 2
+      }
+    },
+    {
+      "title": "title",
+      "members": [],
+      "userId": 4,
+      "id": 3
+    },
+    {
+      "title": "title2",
+      "members": [],
+      "userId": 5,
+      "id": 4
+    }
+  ]
 }

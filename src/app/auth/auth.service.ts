@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { catchError, tap } from 'rxjs/operators';
-import { throwError, BehaviorSubject, Subject } from 'rxjs';
+import { throwError, BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt'
 
@@ -151,7 +151,6 @@ export class AuthService {
 
   }
   updateUser(id: number, email: string, username: string, firstName: string, lastName: string,) {
-    console.log("shemovida", firstName)
     this.http.patch(`${this.signUpURL}/${id}`, {
       email: email,
       firstName: firstName,

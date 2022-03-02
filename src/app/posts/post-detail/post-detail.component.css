@@ -1,22 +1,47 @@
 .container {
   width: 80%;
   margin: 0 auto;
-  box-shadow: -5px -2px 137px -65px rgba(149,26,253,0.64);
+  box-shadow: -5px -2px 137px -65px rgba(149, 26, 253, 0.64);
 }
-.post-wrapper{
+
+.post-wrapper {
   margin-top: 2em;
   margin-bottom: 1em;
-  box-shadow: -5px -2px 137px -65px rgba(149,26,253,0.64);
 }
+
 .mat-form-field {
   width: 100%;
 }
 
+#title, #content, .comment_input {
+  width: 100%;
+}
+.clicked{
+  background-color:#5b24bb3f;
+}
+
+
+.mat-card-actions {
+  margin: 0;
+  padding: 0;
+}
+
+#title:read-only, #content:read-only {
+  border: none;
+  font-size:14px;
+}
+#title{
+  font-weight: bold;
+}
 .comment {
-  background-color: #5b24bb10;
+  background-color: #441c8a96;
   padding-left: 10px;
   padding-right: 10px;
+  margin-top: 5px;;
 }
-.comment_author{
+.comment_wrapper{
+  padding:10px;
+}
+.comment_author {
   margin-bottom: 5px;
 }

@@ -1,15 +1,14 @@
+import { User } from "./user";
 
 export class Group {
-  public creator: string;
   public title: string;
-  public numOfMembers: number;
-  public userId: string;
+  public members?: User[] | null;
+  public userId?: number;
   public id?: number;
 
-  constructor(creator: string, title: string, numOfMembers: number, userId: string, id: number ) {
-    this.creator = creator;
+  constructor(title: string, members?:User[] | null, userId?: number, id?: number ) {
     this.title = title;
-    this.numOfMembers = numOfMembers;
+    this.members = members;
     this.userId=userId;
     this.id = id;
 

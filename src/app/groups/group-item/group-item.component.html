@@ -1,0 +1,43 @@
+<div class="card-wrapper">
+  <mat-card class="post-wrapper">
+    <mat-card-title
+      ><a [routerLink]="['/groups/', group.id]">{{
+        group.title
+      }}</a></mat-card-title
+    >
+    <mat-card-subtitle>
+      <h2>{{ author }}</h2>
+    </mat-card-subtitle>
+    <mat-card-content>
+      <p>
+        members:
+        {{
+          group.members == null || group.members == undefined
+            ? "1"
+            : group.members.length + 1
+        }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button
+        *ngIf="group.userId !== userId"
+        mat-button
+        [disabled]="isJoined"
+        (click)="onJoinClicked()"
+      >
+        Join
+      </button>
+      <button
+        *ngIf="group.userId !== userId"
+        mat-button
+        [disabled]="!isJoined  && !null"
+        (click)="onLeaveClicked()"
+      >
+        Leave
+      </button>
+      <button *ngIf="group.userId == userId" (click)="onDelete()" mat-button>
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

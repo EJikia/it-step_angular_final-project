@@ -1,5 +1,5 @@
 <mat-card class="post-wrapper">
-  <mat-card-actions align="end" class="edit_btn" *ngIf="userId==post.userId">
+  <mat-card-actions align="end" class="edit_btn" *ngIf="userId == post.userId">
     <button mat-button [matMenuTriggerFor]="edit" class="edit">
       <mat-icon>edit</mat-icon>
     </button>
@@ -21,20 +21,20 @@
   <mat-card-actions align="end">
     <div class="btn_wrapper">
       <button
-        [ngClass]="{ clicked: liked }"
+
         #ref
         mat-button
-        [disabled]="liked ? true : false"
+        [disabled]="liked ? true : liked == null ? false : false"
         (click)="onReactionClicked(true)"
       >
         Like {{ numOfLikes }}
       </button>
 
       <button
-        [ngClass]="{ clicked: !liked }"
+
         #ref1
         mat-button
-        [disabled]="liked ? false : true"
+        [disabled]="liked ? false : liked == null ? false : true"
         (click)="onReactionClicked(false)"
       >
         Dislike {{ numOfDislikes }}

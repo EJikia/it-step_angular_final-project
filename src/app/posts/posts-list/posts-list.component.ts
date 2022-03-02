@@ -56,7 +56,6 @@ export class PostsListComponent implements OnInit {
     this.postsService.getPosts().subscribe(resData => {
       this.posts = resData;
       if (title !== "") {
-        console.log(title)
         this.posts = this.filterService.filter(this.posts, title);
       } else {
         this.loadPosts();

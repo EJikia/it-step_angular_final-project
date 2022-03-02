@@ -42,7 +42,7 @@ export class SettingsPageComponent implements OnInit {
       this.username = this.authService.username;
       this.firstName = this.authService.firstName;
       this.lastName = this.authService.lastName;
-      console.log(this.email, this.username, this.firstName, this.lastName)
+
 
       this.userInfoForm.setValue({
         email: this.email,
@@ -56,7 +56,6 @@ export class SettingsPageComponent implements OnInit {
 
 
   onSubmit() {
-    console.log((this.userInfoForm.value.firstname))
     const newEmail = this.userInfoForm.value.email;
     const newUsername = this.userInfoForm.value.username;
     const newFirstName = this.userInfoForm.value.firstname;
@@ -66,7 +65,6 @@ export class SettingsPageComponent implements OnInit {
 
   onReset(){
     this.resetClicked=true;
-    console.log(this.resetClicked)
     this.userInfoForm.setValue({
       email: this.email,
       username: this.username,

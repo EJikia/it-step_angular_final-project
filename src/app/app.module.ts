@@ -25,8 +25,8 @@ import { GroupDialogBoxComponent } from './groups/groups-list/group-dialog-box/g
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { PostsService } from './services/posts.service';
 import { GroupDetailComponent } from './groups/group-detail/group-detail.component';
-import { PostEditComponent } from './posts/post-edit/post-edit.component';
 import { PageNotFoundComponent } from './shared/page-not-found.component';
+import { GroupItemComponent } from './groups/group-item/group-item.component';
 
 
 @NgModule({
@@ -43,12 +43,12 @@ import { PageNotFoundComponent } from './shared/page-not-found.component';
     SettingsPageComponent,
     LoadingSpinnerComponent,
     FilterComponent,
-    PostEditComponent,
     GroupsComponent,
     GroupsListComponent,
     GroupDialogBoxComponent,
     PageNotFoundComponent,
-    GroupDetailComponent
+    GroupDetailComponent,
+    GroupItemComponent
 
 
   ],

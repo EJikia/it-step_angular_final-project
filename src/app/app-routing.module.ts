@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { GroupDetailComponent } from './groups/group-detail/group-detail.component';
 import { GroupDialogBoxComponent } from './groups/groups-list/group-dialog-box/group-dialog-box.component';
+import { GroupsResolverService } from './groups/groups-resolver.service';
 import { GroupsComponent } from './groups/groups.component';
 import { LoginComponent } from './login/login.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent, canActivate: [LoggedInGuard] },
   { path: 'login', component: LoginComponent, canActivate: [LoggedInGuard]},
   { path: 'groups', component: GroupsComponent,canActivate: [AuthGuard] },
-  { path: 'groups/:id', component: GroupDetailComponent, canActivate: [AuthGuard]},
+  { path: 'groups/:id', component: GroupDetailComponent, resolve: {post: GroupsResolverService}, canActivate: [AuthGuard]},
   { path: 'update-user-info', component: SettingsPageComponent, canActivate: [AuthGuard] },
   { path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
   { path: 'posts/:id', component: PostDetailComponent, resolve: {post: PostsResolverService}, canActivate: [AuthGuard] },

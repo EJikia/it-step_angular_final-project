@@ -20,7 +20,7 @@ export class PostItemComponent implements OnInit {
   @Output() isEditMode!: boolean;
   numOfLikes!: number;
   numOfDislikes!: number;
-  liked: boolean | null = null;
+  liked!: boolean | null;
   userId!: number;
 
   constructor(private router: Router,
@@ -30,17 +30,19 @@ export class PostItemComponent implements OnInit {
     private shareDataService: ShareDataService) { }
 
   ngOnInit(): void {
-    this.reactionsCounter();
-    this.checkUserReaction();
+
     this.userId = this.authService.userId;
+    this.checkUserReaction();
+    this.reactionsCounter();
   }
   checkUserReaction() {
     let postReactions = this.post.reactions;
     let userReaction = postReactions?.find(i => i.userId == this.userId);
-    if (userReaction == undefined) {
+    if (userReaction == undefined || userReaction == null) {
       this.liked = null;
     }
     this.liked = <any>userReaction?.isLiked;
+
   }
   reactionsCounter() {
     const reactions = this.post.reactions;
@@ -53,8 +55,8 @@ export class PostItemComponent implements OnInit {
       this.numOfLikes = 0;
     }
 
-
   }
+
   onDelete() {
     const id: any = this.post.id
     this.postsService.deletePost(id);
