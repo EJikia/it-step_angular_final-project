@@ -5,12 +5,14 @@ export class Group {
   public members?: User[] | null;
   public userId?: number;
   public id?: number;
+  public user?: User;
 
-  constructor(title: string, members?:User[] | null, userId?: number, id?: number ) {
+  constructor(title: string, members?:User[] | null, userId?: number, id?: number,  user?: User) {
     this.title = title;
     this.members = members;
     this.userId=userId;
     this.id = id;
+    this.user=user;
 
   }
 

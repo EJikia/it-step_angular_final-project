@@ -25,17 +25,16 @@ export class GroupItemComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     this.loadGroups()
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
     this.checkMembership()
-
   }
 
   loadGroups() {
     this.groupsService.getGroups().subscribe(resData => {
       this.groups = resData;
     });
-
   }
 
 

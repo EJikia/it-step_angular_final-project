@@ -22,7 +22,7 @@ export interface AuthResponseData {
 
 
 export class AuthService {
-  // user = new BehaviorSubject<any>(null)
+
   user = new BehaviorSubject<any>(null);
   email!: string;
   username!: string;
